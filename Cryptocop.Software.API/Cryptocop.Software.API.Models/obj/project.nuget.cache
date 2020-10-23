@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jH1k+e8SwXsWqu/wakdoOR0F/T7YUYN/a39q5zjq7D/JZFdzjZ4CyI3Po3IhlDZrwKy6fbQgZ7YnQfZePH+L5Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rikha\\Documents\\RU\\RU-Projects\\VEFT-FA-Cryptocop\\Cryptocop.Software.API\\Cryptocop.Software.API.Models\\Cryptocop.Software.API.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rikha\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
