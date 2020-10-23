@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\rikha\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rikha\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Cryptocop.Software.API.-450184912.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API" t="IncludeFlat">
+      <e p="Cryptocop.Software.API" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="AddressController.cs" t="Include" />
+          <e p="CryptoCurrencyController.cs" t="Include" />
+          <e p="ExchangeController.cs" t="Include" />
+          <e p="OrderController.cs" t="Include" />
+          <e p="PaymentController.cs" t="Include" />
+          <e p="ShoppingCartController.cs" t="Include" />
+        </e>
+        <e p="Cryptocop.Software.API.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Cryptocop.Software.API.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="Cryptocop.Software.API.Models" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Cryptocop.Software.API.Models.csproj" t="IncludeRecursive" />
+        <e p="Envelope.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Cryptocop.Software.API.Models.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Cryptocop.Software.API.Repositories" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Cryptocop.Software.API.Repositories.csproj" t="IncludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="HashingHelper.cs" t="Include" />
+          <e p="PaymentCardHelper.cs" t="Include" />
+        </e>
+        <e p="Implementations" t="Include">
+          <e p="AddressRepository.cs" t="Include" />
+          <e p="OrderRepository.cs" t="Include" />
+          <e p="PaymentRepository.cs" t="Include" />
+          <e p="ShoppingCartRepository.cs" t="Include" />
+          <e p="TokenRepository.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IAddressRepository.cs" t="Include" />
+          <e p="IOrderRepository.cs" t="Include" />
+          <e p="IPaymentRepository.cs" t="Include" />
+          <e p="IShoppingCartRepository.cs" t="Include" />
+          <e p="ITokenRepository.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Cryptocop.Software.API.Repositories.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Cryptocop.Software.API.Services" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Cryptocop.Software.API.Services.csproj" t="IncludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="HttpResponseMessageExtensions.cs" t="Include" />
+        </e>
+        <e p="Implementations" t="Include">
+          <e p="AccountService.cs" t="Include" />
+          <e p="AddressService.cs" t="Include" />
+          <e p="CryptoCurrencyService.cs" t="Include" />
+          <e p="ExchangeService.cs" t="Include" />
+          <e p="JwtTokenService.cs" t="Include" />
+          <e p="OrderService.cs" t="Include" />
+          <e p="PaymentService.cs" t="Include" />
+          <e p="QueueService.cs" t="Include" />
+          <e p="ShoppingCartService.cs" t="Include" />
+          <e p="TokenService.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IAccountService.cs" t="Include" />
+          <e p="IAddressService.cs" t="Include" />
+          <e p="ICryptoCurrencyService.cs" t="Include" />
+          <e p="IExchangeService.cs" t="Include" />
+          <e p="IJwtTokenService.cs" t="Include" />
+          <e p="IOrderService.cs" t="Include" />
+          <e p="IPaymentService.cs" t="Include" />
+          <e p="IQueueService.cs" t="Include" />
+          <e p="IShoppingCartService.cs" t="Include" />
+          <e p="ITokenService.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Cryptocop.Software.API.Services.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Cryptocop.Software.API.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
