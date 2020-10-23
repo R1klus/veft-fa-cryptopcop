@@ -45,7 +45,16 @@
           <e p="ShoppingCartItemDto.cs" t="Include" />
           <e p="UserDto.cs" t="Include" />
         </e>
-        <e p="Entities" t="Include" />
+        <e p="Entities" t="Include">
+          <e p="Address.cs" t="Include" />
+          <e p="JwtToken.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+          <e p="OrderItem.cs" t="Include" />
+          <e p="PaymentCard.cs" t="Include" />
+          <e p="ShoppingCart.cs" t="Include" />
+          <e p="ShoppingCartItem.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
         <e p="Envelope.cs" t="Include" />
         <e p="InputModels" t="Include">
           <e p="AddressInputModel.cs" t="Include" />

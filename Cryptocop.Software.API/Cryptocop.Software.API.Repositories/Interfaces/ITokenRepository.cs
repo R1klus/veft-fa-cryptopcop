@@ -1,4 +1,6 @@
-﻿namespace Cryptocop.Software.API.Repositories.Interfaces
+﻿using Cryptocop.Software.API.Models.Entities;
+
+namespace Cryptocop.Software.API.Repositories.Interfaces
 {
     public interface ITokenRepository
     {

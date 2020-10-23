@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cryptocop.Software.API.Controllers
 {
@@ -6,6 +7,18 @@ namespace Cryptocop.Software.API.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        // TODO: Setup routes
+        [HttpGet]
+        [Route("")]
+        public IActionResult GetPayments()
+        {
+            throw new NotImplementedException(); 
+        }
+
+        [HttpPost]
+        [Route("")]
+        public IActionResult AddPaymentMethod()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

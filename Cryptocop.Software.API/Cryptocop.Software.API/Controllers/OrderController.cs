@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cryptocop.Software.API.Controllers
 {
@@ -6,6 +7,20 @@ namespace Cryptocop.Software.API.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        // TODO: Setup routes
+        [HttpGet]
+        [Route("")]
+        public IActionResult GetAllOrders()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        [Route("")]
+        public IActionResult CreateNewOrder()
+        {
+            throw new NotImplementedException();
+        }
+        
+        
     }
 }
