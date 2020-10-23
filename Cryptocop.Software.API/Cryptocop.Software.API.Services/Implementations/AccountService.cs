@@ -1,4 +1,6 @@
-﻿using Cryptocop.Software.API.Repositories.Interfaces;
+﻿using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.InputModels;
+using Cryptocop.Software.API.Repositories.Interfaces;
 using Cryptocop.Software.API.Services.Interfaces;
 
 namespace Cryptocop.Software.API.Services.Implementations

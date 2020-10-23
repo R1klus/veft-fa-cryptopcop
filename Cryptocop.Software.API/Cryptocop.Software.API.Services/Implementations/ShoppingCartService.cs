@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Interfaces;
 using Cryptocop.Software.API.Services.Helpers;
 

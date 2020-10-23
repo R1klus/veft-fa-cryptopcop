@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Interfaces;
 
 namespace Cryptocop.Software.API.Repositories.Implementations

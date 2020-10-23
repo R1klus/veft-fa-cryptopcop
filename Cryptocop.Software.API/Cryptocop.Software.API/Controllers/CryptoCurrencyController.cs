@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cryptocop.Software.API.Controllers
 {
@@ -6,6 +7,12 @@ namespace Cryptocop.Software.API.Controllers
     [Route("api/cryptocurrencies")]
     public class CryptoCurrencyController : ControllerBase
     {
-        // TODO: Setup routes
+        
+        [HttpGet]
+        [Route("")]
+        public IActionResult GetAllCrupytoCurrencies()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

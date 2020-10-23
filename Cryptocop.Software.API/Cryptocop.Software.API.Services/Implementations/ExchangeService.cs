@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Cryptocop.Software.API.Models;
+using Cryptocop.Software.API.Models.DTOs;
 using Cryptocop.Software.API.Services.Helpers;
 using Cryptocop.Software.API.Services.Interfaces;
 

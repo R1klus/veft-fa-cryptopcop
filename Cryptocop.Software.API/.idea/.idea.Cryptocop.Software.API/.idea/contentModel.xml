@@ -35,7 +35,26 @@
       <e p="Cryptocop.Software.API.Models" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Cryptocop.Software.API.Models.csproj" t="IncludeRecursive" />
+        <e p="DTOs" t="Include">
+          <e p="AddressDto.cs" t="Include" />
+          <e p="CryptocurrencyDto.cs" t="Include" />
+          <e p="ExchangeDto.cs" t="Include" />
+          <e p="OrderDto.cs" t="Include" />
+          <e p="OrderItemDto.cs" t="Include" />
+          <e p="PaymentCardDto.cs" t="Include" />
+          <e p="ShoppingCartItemDto.cs" t="Include" />
+          <e p="UserDto.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include" />
         <e p="Envelope.cs" t="Include" />
+        <e p="InputModels" t="Include">
+          <e p="AddressInputModel.cs" t="Include" />
+          <e p="LoginInputModel.cs" t="Include" />
+          <e p="OrderInputModel.cs" t="Include" />
+          <e p="PaymentCardInputModel.cs" t="Include" />
+          <e p="RegisterInputModel.cs" t="Include" />
+          <e p="ShoppingCartItemInputModel.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">

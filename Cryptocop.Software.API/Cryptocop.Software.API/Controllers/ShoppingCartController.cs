@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cryptocop.Software.API.Controllers
 {
@@ -6,6 +7,24 @@ namespace Cryptocop.Software.API.Controllers
     [ApiController]
     public class ShoppingCartController : ControllerBase
     {
-        // TODO: Setup routes
+        [HttpPost]
+        public IActionResult AddItemToCart()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpDelete]
+        [Route("id:int")]
+        public IActionResult DeleteItemFromCart()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPatch]
+        [Route("id:int")]
+        public IActionResult UpdateQuantity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

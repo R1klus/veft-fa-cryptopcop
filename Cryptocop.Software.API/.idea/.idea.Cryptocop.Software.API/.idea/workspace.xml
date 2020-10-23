@@ -22,7 +22,57 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73e9d968-2412-4588-8418-3e86180bac72" name="Default Changelist" comment="" />
+    <list default="true" id="73e9d968-2412-4588-8418-3e86180bac72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/AddressDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/OrderDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/OrderItemDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/PaymentCardDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ShoppingCartItemDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/UserDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/AddressInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/LoginInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/OrderInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/PaymentCardInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/ShoppingCartItemInputModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Cryptocop.Software.API.Models.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Cryptocop.Software.API.Models.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/OrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/OrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/ShoppingCartRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/ShoppingCartRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IAddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IAddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IOrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IPaymentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IPaymentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IShoppingCartRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IShoppingCartRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ShoppingCartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAddressService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAddressService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ICryptoCurrencyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ICryptoCurrencyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IExchangeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IExchangeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IPaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IShoppingCartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ITokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ShoppingCartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ShoppingCartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,16 +84,71 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptocurrencyDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ShoppingCartItemDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/AddressDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/PaymentCardDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/OrderDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/OrderItemDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/AddressInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/LoginInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/OrderInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/PaymentCardInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/ShoppingCartItemInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IAddressRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IOrderRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IPaymentRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IShoppingCartRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/IUserRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/OrderRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/ShoppingCartRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAccountService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IAddressService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyDto.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ICryptoCurrencyService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IExchangeService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IOrderService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IPaymentService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IShoppingCartService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/ITokenService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/OrderService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ShoppingCartService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ShoppingCartController.cs" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1jH0hpjDtba0mgJ11FdRisBWqmV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Cryptocop.Software.API">
     <configuration name="Cryptocop.Software.API" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -85,14 +190,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603445833521</updated>
-      <workItem from="1603445841672" duration="111000" />
+      <workItem from="1603445841672" duration="1233000" />
+      <workItem from="1603449290419" duration="3975000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -104,14 +210,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="165" key="SettingsEditor" timestamp="1603445953016">
+    <state x="922" y="158" width="998" height="708" key="SettingsEditor" timestamp="1603446541178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603445953016" />
+    <state x="922" y="158" width="998" height="708" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603446541178" />
   </component>
 </project>
