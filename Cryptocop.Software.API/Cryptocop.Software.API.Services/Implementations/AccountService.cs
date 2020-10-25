@@ -7,6 +7,15 @@ namespace Cryptocop.Software.API.Services.Implementations
 {
     public class AccountService : IAccountService
     {
+        private readonly IUserRepository _userRepository;
+        private readonly ITokenRepository _tokenRepository;
+
+        public AccountService(IUserRepository userRepository, ITokenRepository tokenRepository)
+        {
+            _userRepository = userRepository;
+            _tokenRepository = tokenRepository;
+        }
+
         public UserDto CreateUser(RegisterInputModel inputModel)
         {
             throw new System.NotImplementedException();
@@ -21,5 +30,6 @@ namespace Cryptocop.Software.API.Services.Implementations
         {
             throw new System.NotImplementedException();
         }
+        
     }
 }

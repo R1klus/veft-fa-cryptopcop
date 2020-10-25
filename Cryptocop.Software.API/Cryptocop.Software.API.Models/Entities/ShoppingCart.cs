@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cryptocop.Software.API.Models.Entities
 {
@@ -6,7 +7,10 @@ namespace Cryptocop.Software.API.Models.Entities
     {
         public int Id { get; set; }
 
-        [ForeignKey("User")] public int UserId { get; set; }
+        // Navigation Properties
+        public int UserId { get; set; }
         public User User { get; set; }
+        public List<ShoppingCartItem> ShoppingCartItems { get; set; }
+        
     }
 }

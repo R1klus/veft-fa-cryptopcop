@@ -417,7 +417,8 @@
           "Cryptocop.Software.API.Models": "1.0.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "3.1.8",
           "Microsoft.EntityFrameworkCore": "3.1.8",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "3.1.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "3.1.4",
+          "System.IdentityModel.Tokens.Jwt": "6.7.1"
         },
         "compile": {
           "bin/placeholder/Cryptocop.Software.API.Repositories.dll": {}

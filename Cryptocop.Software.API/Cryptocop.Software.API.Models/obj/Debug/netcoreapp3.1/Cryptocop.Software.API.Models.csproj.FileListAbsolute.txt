@@ -1,0 +1,9 @@
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\bin\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.deps.json
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\bin\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\bin\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.pdb
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.csprojAssemblyReference.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.AssemblyInfoInputs.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.AssemblyInfo.cs
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.csproj.CoreCompileInputs.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Models\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.Models.pdb

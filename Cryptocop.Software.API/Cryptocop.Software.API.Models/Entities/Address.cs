@@ -12,7 +12,8 @@ namespace Cryptocop.Software.API.Models.Entities
         public string Country { get; set; }
         public string City { get; set; }
         
-        [ForeignKey("User")] public int UserId { get; set; }
+        // Navigation properties
+        public int UserId { get; set; }
         public User User { get; set; }
     }
 }

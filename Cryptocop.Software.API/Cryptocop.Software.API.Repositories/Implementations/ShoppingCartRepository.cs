@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
 using Cryptocop.Software.API.Models.DTOs;
 using Cryptocop.Software.API.Models.InputModels;
+using Cryptocop.Software.API.Repositories.Contexts;
 using Cryptocop.Software.API.Repositories.Interfaces;
 
 namespace Cryptocop.Software.API.Repositories.Implementations
 {
     public class ShoppingCartRepository : IShoppingCartRepository
     {
+        private readonly CryptocopDbContext _dbContext;
+
+        public ShoppingCartRepository(CryptocopDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public IEnumerable<ShoppingCartItemDto> GetCartItems(string email)
         {
             throw new System.NotImplementedException();

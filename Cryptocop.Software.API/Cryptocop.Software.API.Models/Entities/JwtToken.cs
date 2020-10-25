@@ -6,7 +6,6 @@ namespace Cryptocop.Software.API.Models.Entities
     public class JwtToken
     {
         public int Id { get; set; }
-        public Boolean Blacklisted { get; set; }
-        
+        public bool Blacklisted { get; set; }
     }
 }

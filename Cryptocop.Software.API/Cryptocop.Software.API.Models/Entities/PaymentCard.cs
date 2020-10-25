@@ -10,7 +10,7 @@ namespace Cryptocop.Software.API.Models.Entities
         public int Month { get; set; }
         public int Year { get; set; }
         
-        [ForeignKey("User")] public int UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
     }
 }

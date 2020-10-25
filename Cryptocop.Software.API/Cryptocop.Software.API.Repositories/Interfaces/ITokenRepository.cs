@@ -1,10 +1,11 @@
-﻿using Cryptocop.Software.API.Models.Entities;
+﻿using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.Entities;
 
 namespace Cryptocop.Software.API.Repositories.Interfaces
 {
     public interface ITokenRepository
     {
-        JwtToken CreateNewToken();
+        JwtToken CreateNewToken(UserDto user);
         bool IsTokenBlacklisted(int tokenId);
         void VoidToken(int tokenId);
     }

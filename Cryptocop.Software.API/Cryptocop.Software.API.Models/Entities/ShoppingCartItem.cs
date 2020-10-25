@@ -9,7 +9,7 @@ namespace Cryptocop.Software.API.Models.Entities
         public float Quantity { get; set; }
         public float UnitPrice { get; set; }
         
-        [ForeignKey("ShoppingCart")] public int ShoppingCartId { get; set; }
+        public int ShoppingCartId { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
     }
 }

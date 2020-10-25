@@ -2211,7 +2211,8 @@
           "Cryptocop.Software.API.Models": "1.0.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "3.1.8",
           "Microsoft.EntityFrameworkCore": "3.1.8",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "3.1.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "3.1.4",
+          "System.IdentityModel.Tokens.Jwt": "6.7.1"
         },
         "compile": {
           "bin/placeholder/Cryptocop.Software.API.Repositories.dll": {}
@@ -7289,7 +7290,8 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.8",
       "Microsoft.EntityFrameworkCore >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.8",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
+      "Npgsql.EntityFrameworkCore.PostgreSql >= 3.1.4"
     ]
   },
   "packageFolders": {
@@ -7356,6 +7358,10 @@
             "version": "[3.1.8, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[3.1.4, )"
+          },
+          "Npgsql.EntityFrameworkCore.PostgreSql": {
             "target": "Package",
             "version": "[3.1.4, )"
           }

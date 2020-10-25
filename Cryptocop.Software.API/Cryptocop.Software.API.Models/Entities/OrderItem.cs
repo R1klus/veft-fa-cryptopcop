@@ -11,7 +11,7 @@ namespace Cryptocop.Software.API.Models.Entities
         public float TotalPrice { get; set; }
         
         
-        [ForeignKey("Order")] public int OrderId { get; set; }
+        public int OrderId { get; set; }
         public Order Order { get; set; }
     }
 }

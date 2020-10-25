@@ -1,15 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cryptocop.Software.API.Models.Entities
 {
     public class User
     {
-        [Required] public int Id { get; set; }
-        [Required] public string FullName { get; set; }
-        [Required] public string Email { get; set; }
-        
-        [Required] 
-        [DataType(DataType.Password)]
+        public int Id { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
         public string HashedPassword { get; set; }
+        
+        // Navigation Properties
+        public List<PaymentCard> PaymentCards { get; set; }
+        public List<Order> Orders { get; set; }
+        public Address Address { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }
