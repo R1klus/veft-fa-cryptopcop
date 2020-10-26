@@ -19,7 +19,20 @@ namespace Cryptocop.Software.API.Repositories.Contexts
 
             modelBuilder.Entity<Address>()
                 .HasOne(a => a.User)
-                .WithOne(u => u.Address);
+                .WithMany(u => u.Address);
+
+            modelBuilder.Entity<Address>(entity =>
+            {
+                entity.HasIndex(e => new
+                {
+                    e.StreetName,
+                    e.HouseNumber,
+                    e.City,
+                    e.Country,
+                    e.ZipCode,
+                    e.UserId
+                }).IsUnique();
+            });
             
             modelBuilder.Entity<ShoppingCart>()
                 .HasOne(s => s.User)

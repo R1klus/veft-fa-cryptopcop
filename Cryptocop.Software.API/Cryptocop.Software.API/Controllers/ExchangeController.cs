@@ -18,10 +18,10 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
-        public IActionResult GetAllExchanges()
+        [Route("{pageNumber}")]
+        public IActionResult GetAllExchanges(int pageNumber=1)
         {
-            throw new NotImplementedException();
+            return Ok(_exchangeService.GetExchanges(pageNumber).Result);
         }
     }
 }

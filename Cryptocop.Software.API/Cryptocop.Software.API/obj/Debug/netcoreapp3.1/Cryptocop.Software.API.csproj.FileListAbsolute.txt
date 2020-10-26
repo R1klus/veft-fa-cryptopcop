@@ -133,3 +133,4 @@ C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API
 C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.dll
 C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.pdb
 C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API\obj\Debug\netcoreapp3.1\Cryptocop.Software.API.genruntimeconfig.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API\bin\Debug\netcoreapp3.1\AutoMapper.dll

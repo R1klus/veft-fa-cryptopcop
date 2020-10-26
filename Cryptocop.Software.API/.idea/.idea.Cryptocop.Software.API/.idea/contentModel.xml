@@ -4,6 +4,7 @@
     <e p="C:\Users\rikha\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\rikha\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Cryptocop.Software.API.-450184912.00" t="ExcludeRecursive" />
     <e p="C:\Users\rikha\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\rikha\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API" t="IncludeFlat">
       <e p="Cryptocop.Software.API" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
@@ -20,12 +21,25 @@
           <e p="ShoppingCartController.cs" t="Include" />
         </e>
         <e p="Cryptocop.Software.API.csproj" t="IncludeRecursive" />
+        <e p="Mappings" t="Include">
+          <e p="MappingProfile.cs" t="Include" />
+        </e>
         <e p="Middlewares" t="Include">
           <e p="JwtAuthenticationMiddleware.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
           <e p="20201025101129_InitialMigration.cs" t="Include" />
           <e p="20201025101129_InitialMigration.Designer.cs" t="Include" />
+          <e p="20201026092945_changedAddressToMany.cs" t="Include" />
+          <e p="20201026092945_changedAddressToMany.Designer.cs" t="Include" />
+          <e p="20201026095426_uniqueAddress.cs" t="Include" />
+          <e p="20201026095426_uniqueAddress.Designer.cs" t="Include" />
+          <e p="20201026095821_removedForeigKeyAddress.cs" t="Include" />
+          <e p="20201026095821_removedForeigKeyAddress.Designer.cs" t="Include" />
+          <e p="20201026100140_uniqueAddress2.cs" t="Include" />
+          <e p="20201026100140_uniqueAddress2.Designer.cs" t="Include" />
+          <e p="20201026101017_changedAddressestoAddressforUser.cs" t="Include" />
+          <e p="20201026101017_changedAddressestoAddressforUser.Designer.cs" t="Include" />
           <e p="CryptocopDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -47,7 +61,9 @@
         <e p="DTOs" t="Include">
           <e p="AddressDto.cs" t="Include" />
           <e p="CryptocurrencyDto.cs" t="Include" />
+          <e p="CryptoCurrencyResponse.cs" t="Include" />
           <e p="ExchangeDto.cs" t="Include" />
+          <e p="ExchangeResponse.cs" t="Include" />
           <e p="OrderDto.cs" t="Include" />
           <e p="OrderItemDto.cs" t="Include" />
           <e p="PaymentCardDto.cs" t="Include" />
@@ -87,6 +103,9 @@
           <e p="CryptoCopDbContext.cs" t="Include" />
         </e>
         <e p="Cryptocop.Software.API.Repositories.csproj" t="IncludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="InvalidLoginException.cs" t="Include" />
+        </e>
         <e p="Helpers" t="Include">
           <e p="HashingHelper.cs" t="Include" />
           <e p="PaymentCardHelper.cs" t="Include" />

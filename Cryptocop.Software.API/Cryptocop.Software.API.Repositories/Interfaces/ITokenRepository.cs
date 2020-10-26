@@ -5,7 +5,7 @@ namespace Cryptocop.Software.API.Repositories.Interfaces
 {
     public interface ITokenRepository
     {
-        JwtToken CreateNewToken(UserDto user);
+        JwtToken CreateNewToken();
         bool IsTokenBlacklisted(int tokenId);
         void VoidToken(int tokenId);
     }

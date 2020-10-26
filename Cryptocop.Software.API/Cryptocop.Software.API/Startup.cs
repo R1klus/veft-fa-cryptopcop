@@ -1,4 +1,6 @@
 using System.Reflection;
+using AutoMapper;
+using Cryptocop.Software.API.Mappings;
 using Cryptocop.Software.API.Middlewares;
 using Cryptocop.Software.API.Repositories.Contexts;
 using Cryptocop.Software.API.Repositories.Implementations;
@@ -52,6 +54,15 @@ namespace Cryptocop.Software.API
                 config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtTokenAuthentication(Configuration);
             
+            // AutoMapper
+            var mappingProfile = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            var mapper = mappingProfile.CreateMapper();
+            services.AddSingleton(mapper);
+            
             // Service Transients
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IAddressService, AddressService>();
@@ -62,7 +73,14 @@ namespace Cryptocop.Software.API
             services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IQueueService, QueueService>();
             services.AddTransient<IShoppingCartService, ShoppingCartService>();
-            services.AddTransient<ITokenService, TokenService>();
+            
+            var jwtConfig = Configuration.GetSection("JwtConfig");
+            services.AddTransient<ITokenService>((c) => new TokenService(
+                jwtConfig.GetSection("secret").Value,
+                jwtConfig.GetSection("expirationInMinutes").Value,
+                jwtConfig.GetSection("issuer").Value,
+                jwtConfig.GetSection("audience").Value
+            ));
             
             // Repository Transients
             services.AddTransient<IAddressRepository, AddressRepository>();
@@ -70,24 +88,16 @@ namespace Cryptocop.Software.API
             services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddTransient<IShoppingCartRepository, ShoppingCartRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
-            var jwtConfig = Configuration.GetSection("JwtConfig");
-            services.AddTransient<ITokenRepository>((c) =>
-                new TokenRepository(
-                    jwtConfig.GetSection("secret").Value,
-                    jwtConfig.GetSection("expirationInMinutes").Value,
-                    jwtConfig.GetSection("issuer").Value,
-                    jwtConfig.GetSection("audience").Value,
-                    c.GetService<CryptocopDbContext>()
-                    ));
+            services.AddTransient<ITokenRepository, TokenRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            /*if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            }*/
             
             app.UseHttpsRedirection();
             app.UseRouting();

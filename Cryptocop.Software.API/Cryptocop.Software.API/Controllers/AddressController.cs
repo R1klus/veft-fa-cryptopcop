@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Interfaces;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -23,21 +25,27 @@ namespace Cryptocop.Software.API.Controllers
         [Route("")]
         public IActionResult GetAllAddresses()
         {
-            throw new NotImplementedException();
+            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            return Ok(_addressService.GetAllAddresses(email));
         }
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateNewAddress()
+        public IActionResult AddAddress([FromBody] AddressInputModel address)
         {
-            throw new NotImplementedException();
+            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            _addressService.AddAddress(email, address);
+
+            return Ok();
         }
 
         [HttpDelete]
-        [Route("id:int")]
-        public IActionResult DeleteAddressById()
+        [Route("{addressId}")]
+        public IActionResult DeleteAddressById(int addressId)
         {
-            throw new NotImplementedException();
+            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            _addressService.DeleteAddress(email, addressId);
+            return NoContent();
         }
     }
 }

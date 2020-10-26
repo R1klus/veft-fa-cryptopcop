@@ -18,17 +18,17 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public UserDto CreateUser(RegisterInputModel inputModel)
         {
-            throw new System.NotImplementedException();
+            return _userRepository.CreateUser(inputModel);
         }
 
         public UserDto AuthenticateUser(LoginInputModel loginInputModel)
         {
-            throw new System.NotImplementedException();
+            return _userRepository.AuthenticateUser(loginInputModel);
         }
 
         public void Logout(int tokenId)
         {
-            throw new System.NotImplementedException();
+            _tokenRepository.VoidToken(tokenId);
         }
         
     }

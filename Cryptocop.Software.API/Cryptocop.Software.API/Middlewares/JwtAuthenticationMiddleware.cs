@@ -31,20 +31,20 @@ namespace Cryptocop.Software.API.Middlewares
                     ValidIssuer = issuer,
                     ValidAudience = audience,
                     NameClaimType = "name" // User.Identity.Name
-
                 };
                 x.Events = new JwtBearerEvents
                 {
                     OnTokenValidated = async context =>
                     {
-                        var claim = context.Principal.Claims.FirstOrDefault(c => c.Type == "tokenId").Value;
+                        var claim = context.Principal.Claims.FirstOrDefault(c => c.Type == "TokenId")?.Value;
                         int.TryParse(claim, out var tokenId);
                         var jwtTokenService = context.HttpContext.RequestServices.GetService<IJwtTokenService>();
 
                         if (jwtTokenService.IsTokenBlacklisted(tokenId))
                         {
                             context.Response.StatusCode = 401;
-                            await context.Response.WriteAsync("JWT token provided is invalid");
+                            context.Fail("");
+                            //await context.Response.WriteAsync("JWT token provided is invalid");
                         }
                     }
                 };

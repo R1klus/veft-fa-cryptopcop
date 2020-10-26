@@ -27,26 +27,33 @@ namespace Cryptocop.Software.API.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("HouseNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("StreetName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
                     b.Property<string>("ZipCode")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("StreetName", "HouseNumber", "City", "Country", "ZipCode", "UserId")
                         .IsUnique();
 
                     b.ToTable("Addresses");
@@ -243,8 +250,8 @@ namespace Cryptocop.Software.API.Migrations
             modelBuilder.Entity("Cryptocop.Software.API.Models.Entities.Address", b =>
                 {
                     b.HasOne("Cryptocop.Software.API.Models.Entities.User", "User")
-                        .WithOne("Address")
-                        .HasForeignKey("Cryptocop.Software.API.Models.Entities.Address", "UserId")
+                        .WithMany("Address")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -1,4 +1,6 @@
-﻿using Cryptocop.Software.API.Services.Interfaces;
+﻿using System.Linq;
+using Cryptocop.Software.API.Models.InputModels;
+using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,24 +24,30 @@ namespace Cryptocop.Software.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
-        public IActionResult Register()
+        public IActionResult Register([FromBody] RegisterInputModel register)
         {
-            throw new System.NotImplementedException();
+            var user = _accountService.CreateUser(register);
+            return Ok(user);
         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("signin")]
-        public IActionResult SignIn()
+        public IActionResult SignIn([FromBody] LoginInputModel login)
         {
-            throw new System.NotImplementedException();
+            var user = _accountService.AuthenticateUser(login);
+            if (user == null) { return Unauthorized(); }
+
+            return Ok(_tokenService.GenerateJwtToken(user));
         }
 
         [HttpPost]
         [Route("signout")]
         public IActionResult SignOut()
         {
-            throw new System.NotImplementedException();
+            int.TryParse(User.Claims.FirstOrDefault(c => c.Type == "TokenId")?.Value, out var tokenId);
+            _accountService.Logout(tokenId);
+            return NoContent();
         }
     }
 }

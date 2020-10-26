@@ -17,17 +17,17 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public void AddAddress(string email, AddressInputModel address)
         {
-            throw new System.NotImplementedException();
+            _addressRepository.AddAddress(email, address);
         }
 
         public IEnumerable<AddressDto> GetAllAddresses(string email)
         {
-            throw new System.NotImplementedException();
+            return _addressRepository.GetAllAddresses(email);
         }
 
         public void DeleteAddress(string email, int addressId)
         {
-            throw new System.NotImplementedException();
+            _addressRepository.DeleteAddress(email, addressId);
         }
     }
 }

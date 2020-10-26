@@ -1,6 +1,7 @@
 ﻿using System;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cryptocop.Software.API.Controllers
@@ -19,9 +20,9 @@ namespace Cryptocop.Software.API.Controllers
 
         [HttpGet]
         [Route("")]
-        public IActionResult GetAllCrupytoCurrencies()
+        public IActionResult GetAllCryptoCurrencies()
         {
-            throw new NotImplementedException();
+            return Ok(_cryptoCurrencyService.GetAvailableCryptocurrencies().Result);
         }
     }
 }

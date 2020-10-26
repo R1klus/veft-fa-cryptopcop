@@ -21,7 +21,7 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public bool IsTokenBlacklisted(int tokenId)
         {
-            throw new NotImplementedException();
+            return _tokenRepository.IsTokenBlacklisted(tokenId);
         }
     }
 }
