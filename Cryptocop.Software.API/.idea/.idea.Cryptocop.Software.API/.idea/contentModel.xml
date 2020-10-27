@@ -21,10 +21,19 @@
           <e p="ShoppingCartController.cs" t="Include" />
         </e>
         <e p="Cryptocop.Software.API.csproj" t="IncludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="ModelFormatException.cs" t="Include" />
+          <e p="UnauthorizedException.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="ClaimsHelper.cs" t="Include" />
+          <e p="ErrorHandler.cs" t="Include" />
+        </e>
         <e p="Mappings" t="Include">
           <e p="MappingProfile.cs" t="Include" />
         </e>
         <e p="Middlewares" t="Include">
+          <e p="ExceptionMiddlewareExtension.cs" t="Include" />
           <e p="JwtAuthenticationMiddleware.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
@@ -81,6 +90,7 @@
           <e p="User.cs" t="Include" />
         </e>
         <e p="Envelope.cs" t="Include" />
+        <e p="ExceptionModel.cs" t="Include" />
         <e p="InputModels" t="Include">
           <e p="AddressInputModel.cs" t="Include" />
           <e p="LoginInputModel.cs" t="Include" />
@@ -105,6 +115,8 @@
         <e p="Cryptocop.Software.API.Repositories.csproj" t="IncludeRecursive" />
         <e p="Exceptions" t="Include">
           <e p="InvalidLoginException.cs" t="Include" />
+          <e p="ResourceAlreadyExistsException.cs" t="Include" />
+          <e p="ResourceNotFoundException.cs" t="Include" />
         </e>
         <e p="Helpers" t="Include">
           <e p="HashingHelper.cs" t="Include" />

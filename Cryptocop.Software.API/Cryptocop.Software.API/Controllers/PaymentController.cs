@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Cryptography;
+using Cryptocop.Software.API.Helpers;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,17 +22,25 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("", Name = "GetPayments")]
         public IActionResult GetPayments()
         {
-            throw new NotImplementedException(); 
+            var email = ClaimsHelper.GetClaim(User, "email");
+            var paymentCards = _paymentService.GetStoredPaymentCards(email);
+            return Ok(paymentCards);
         }
 
         [HttpPost]
-        [Route("")]
-        public IActionResult AddPaymentMethod()
+        [Route("", Name = "AddPaymentMethod")]
+        public IActionResult AddPaymentMethod([FromBody] PaymentCardInputModel paymentCard)
         {
-            throw new NotImplementedException();
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
+            var email = ClaimsHelper.GetClaim(User, "email");
+            _paymentService.AddPaymentCard(email, paymentCard);
+            return CreatedAtRoute("AddPaymentMethod", null);
         }
     }
 }

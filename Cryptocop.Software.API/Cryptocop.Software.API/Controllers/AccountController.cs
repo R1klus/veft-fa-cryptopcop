@@ -1,8 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Cryptocop.Software.API.Exceptions;
+using Cryptocop.Software.API.Helpers;
 using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Cryptocop.Software.API.Controllers
 {
@@ -23,18 +30,26 @@ namespace Cryptocop.Software.API.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [Route("register")]
+        [Route("register", Name = "Register")]
         public IActionResult Register([FromBody] RegisterInputModel register)
         {
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
             var user = _accountService.CreateUser(register);
-            return Ok(user);
+            return CreatedAtRoute("Register", new { id = user.Id}, null);
         }
 
         [AllowAnonymous]
         [HttpPost]
-        [Route("signin")]
+        [Route("signin", Name = "SignIn")]
         public IActionResult SignIn([FromBody] LoginInputModel login)
         {
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
             var user = _accountService.AuthenticateUser(login);
             if (user == null) { return Unauthorized(); }
 
@@ -42,10 +57,11 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpPost]
-        [Route("signout")]
+        [Route("signout", Name = "SignOut")]
         public IActionResult SignOut()
         {
-            int.TryParse(User.Claims.FirstOrDefault(c => c.Type == "TokenId")?.Value, out var tokenId);
+            
+            int.TryParse(ClaimsHelper.GetClaim(User, "tokenId"), out var tokenId);
             _accountService.Logout(tokenId);
             return NoContent();
         }

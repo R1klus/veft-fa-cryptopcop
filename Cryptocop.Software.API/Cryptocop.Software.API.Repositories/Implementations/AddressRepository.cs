@@ -6,6 +6,7 @@ using Cryptocop.Software.API.Models.DTOs;
 using Cryptocop.Software.API.Models.Entities;
 using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Contexts;
+using Cryptocop.Software.API.Repositories.Exceptions;
 using Cryptocop.Software.API.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +26,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         public void AddAddress(string email, AddressInputModel address)
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
-            if(user == null){throw new Exception("User not found");}
+            if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
 
             var addressEntity = _mapper.Map<Address>(address);
             addressEntity.UserId = user.Id;
@@ -36,6 +37,8 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public IEnumerable<AddressDto> GetAllAddresses(string email)
         {
+            if(_dbContext.Users.FirstOrDefault(u => u.Email == email) == null){ throw new ResourceNotFoundException($"User with email {email} not found");}
+            
             return _dbContext.Addresses
                 .Where(a => a.User.Email == email)
                 .Select(a => _mapper.Map<AddressDto>(a));
@@ -43,8 +46,9 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public void DeleteAddress(string email, int addressId)
         {
-            if(_dbContext.Users.FirstOrDefault(u => u.Email == email) == null){ throw new Exception("User not found");}
-            if(_dbContext.Addresses.FirstOrDefault(a => a.Id == addressId) == null){ throw new Exception("Address not found");}
+            if(_dbContext.Users.FirstOrDefault(u => u.Email == email) == null){ throw new ResourceNotFoundException($"User with email {email} not found");}
+            if(_dbContext.Addresses.FirstOrDefault(a => a.Id == addressId) == null){ throw new ResourceNotFoundException($"Address with Id {addressId} not found");}
+            
             _dbContext.Addresses.Remove(_dbContext.Addresses.FirstOrDefault(a => a.Id == addressId && a.User.Email == email)!);
             _dbContext.SaveChanges();
         }

@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
+using Cryptocop.Software.API.Exceptions;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -36,15 +38,15 @@ namespace Cryptocop.Software.API.Middlewares
                 {
                     OnTokenValidated = async context =>
                     {
-                        var claim = context.Principal.Claims.FirstOrDefault(c => c.Type == "TokenId")?.Value;
+                        var claim = context.Principal.Claims.FirstOrDefault(c => c.Type == "tokenId")?.Value;
                         int.TryParse(claim, out var tokenId);
                         var jwtTokenService = context.HttpContext.RequestServices.GetService<IJwtTokenService>();
 
                         if (jwtTokenService.IsTokenBlacklisted(tokenId))
                         {
-                            context.Response.StatusCode = 401;
-                            context.Fail("");
-                            //await context.Response.WriteAsync("JWT token provided is invalid");
+                            throw new UnauthorizedException();
+                            /*context.Response.StatusCode = 401;
+                            await context.Response.WriteAsync("JWT token provided is invalid");*/
                         }
                     }
                 };

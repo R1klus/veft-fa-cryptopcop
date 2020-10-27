@@ -30,8 +30,10 @@ namespace Cryptocop.Software.API.Services.Implementations
                                                  "price_usd," +
                                                  "last_trade_at" +
                                                  $"&page={pageNumber}");
-            var exchangeResponses = await response.DeserializeJsonToList<ExchangeResponse>();
-            var exchangeDtos = exchangeResponses.Select(e => _mapper.Map<ExchangeDto>(e));
+            var exchangeDtos =  response
+                .DeserializeJsonToList<ExchangeResponse>()
+                .Result
+                .Select(e => _mapper.Map<ExchangeDto>(e));
             var envelope = new Envelope<ExchangeDto>()
             {
                 PageNumber = pageNumber,

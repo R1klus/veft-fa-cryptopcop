@@ -19,10 +19,10 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("", Name = "GetAllCryptoCurrencies")]
         public IActionResult GetAllCryptoCurrencies()
         {
             return Ok(_cryptoCurrencyService.GetAvailableCryptocurrencies().Result);
-        }
+        }    
     }
 }

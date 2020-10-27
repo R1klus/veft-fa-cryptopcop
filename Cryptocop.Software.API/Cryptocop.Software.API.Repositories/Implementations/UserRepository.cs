@@ -27,8 +27,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         public UserDto CreateUser(RegisterInputModel inputModel)
         {
             var email = _dbContext.Users.FirstOrDefault(u => inputModel.Email == u.Email);
-            if (email != null) {throw new Exception("Email already registered");}
-            if (inputModel.Password != inputModel.PasswordConfirmation){throw new Exception("Passwords do not match");}
+            if (email != null) {throw new ResourceAlreadyExistsException();}
             var user = _mapper.Map<User>(inputModel);
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();

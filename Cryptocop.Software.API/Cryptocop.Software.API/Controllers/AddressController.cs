@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Cryptocop.Software.API.Exceptions;
+using Cryptocop.Software.API.Helpers;
 using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Interfaces;
 using Cryptocop.Software.API.Services.Interfaces;
@@ -22,30 +24,36 @@ namespace Cryptocop.Software.API.Controllers
 
 
         [HttpGet]
-        [Route("")]
+        [Route("", Name = "GetAllAddresses")]
         public IActionResult GetAllAddresses()
         {
-            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            var email = ClaimsHelper.GetClaim(User, "email");
             return Ok(_addressService.GetAllAddresses(email));
         }
 
         [HttpPost]
-        [Route("")]
+        [Route("", Name = "AddAddress")]
         public IActionResult AddAddress([FromBody] AddressInputModel address)
         {
-            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
+            var email = ClaimsHelper.GetClaim(User, "email");
             _addressService.AddAddress(email, address);
 
-            return Ok();
+            return CreatedAtRoute("AddAddress", null);
         }
 
         [HttpDelete]
-        [Route("{addressId}")]
+        [Route("{addressId}", Name = "DeleteAddressById")]
         public IActionResult DeleteAddressById(int addressId)
         {
-            var email = User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+            var email = ClaimsHelper.GetClaim(User, "email");
             _addressService.DeleteAddress(email, addressId);
             return NoContent();
         }
+
+        
     }
 }

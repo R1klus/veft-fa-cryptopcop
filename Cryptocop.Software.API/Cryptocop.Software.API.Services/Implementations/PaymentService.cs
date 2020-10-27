@@ -17,12 +17,12 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public void AddPaymentCard(string email, PaymentCardInputModel paymentCard)
         {
-            throw new System.NotImplementedException();
+            _paymentRepository.AddPaymentCard(email, paymentCard);
         }
 
         public IEnumerable<PaymentCardDto> GetStoredPaymentCards(string email)
         {
-            throw new System.NotImplementedException();
+            return _paymentRepository.GetStoredPaymentCards(email);
         }
     }
 }

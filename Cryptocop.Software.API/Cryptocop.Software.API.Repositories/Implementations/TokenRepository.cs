@@ -6,6 +6,7 @@ using System.Text;
 using Cryptocop.Software.API.Models.DTOs;
 using Cryptocop.Software.API.Models.Entities;
 using Cryptocop.Software.API.Repositories.Contexts;
+using Cryptocop.Software.API.Repositories.Exceptions;
 using Cryptocop.Software.API.Repositories.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
@@ -32,13 +33,14 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         public bool IsTokenBlacklisted(int tokenId)
         {
             var token = _dbContext.JwtTokens.FirstOrDefault(t => t.Id == tokenId);
-            return token != null && token.Blacklisted;
+            if (token == null){ throw new ResourceNotFoundException($"Token with ID {tokenId} not found");}
+            return token.Blacklisted;
         }
 
         public void VoidToken(int tokenId)
         {
             var token = _dbContext.JwtTokens.FirstOrDefault(t => t.Id == tokenId);
-            if (token == null){ throw new Exception($"Token with id {tokenId} not found");}
+            if (token == null){ throw new ResourceNotFoundException($"Token with ID {tokenId} not found");}
 
             token.Blacklisted = true;
             _dbContext.SaveChanges();

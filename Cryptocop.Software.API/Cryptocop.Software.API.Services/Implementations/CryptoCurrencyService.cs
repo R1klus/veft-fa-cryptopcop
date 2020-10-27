@@ -46,7 +46,6 @@ namespace Cryptocop.Software.API.Services.Implementations
                 .Where(c => allowedCurrencies.Contains(c.Symbol));
      
             
-
             return dataDto;
         }
     }

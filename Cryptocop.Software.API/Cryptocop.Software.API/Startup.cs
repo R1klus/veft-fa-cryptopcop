@@ -62,7 +62,7 @@ namespace Cryptocop.Software.API
 
             var mapper = mappingProfile.CreateMapper();
             services.AddSingleton(mapper);
-            
+
             // Service Transients
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IAddressService, AddressService>();
@@ -94,10 +94,12 @@ namespace Cryptocop.Software.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            /*if (env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }*/
+            }
+            
+            app.ConfigureExceptionHandler();
             
             app.UseHttpsRedirection();
             app.UseRouting();

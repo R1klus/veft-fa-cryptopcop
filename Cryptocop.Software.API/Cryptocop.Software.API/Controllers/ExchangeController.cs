@@ -18,7 +18,7 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpGet]
-        [Route("{pageNumber}")]
+        [Route("{pageNumber}", Name = "GetAllExchanges")]
         public IActionResult GetAllExchanges(int pageNumber=1)
         {
             return Ok(_exchangeService.GetExchanges(pageNumber).Result);

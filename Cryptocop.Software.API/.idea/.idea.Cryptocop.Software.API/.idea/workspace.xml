@@ -22,97 +22,60 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73e9d968-2412-4588-8418-3e86180bac72" name="Default Changelist" comment="database crud stuff">
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Mappings/MappingProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026095426_uniqueAddress.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026095426_uniqueAddress.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026095821_removedForeigKeyAddress.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026095821_removedForeigKeyAddress.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026100140_uniqueAddress2.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026100140_uniqueAddress2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026101017_changedAddressestoAddressforUser.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/20201026101017_changedAddressestoAddressforUser.cs" afterDir="false" />
+    <list default="true" id="73e9d968-2412-4588-8418-3e86180bac72" name="Default Changelist" comment="externalapis implemented">
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/ExceptionModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/ResourceAlreadyExistsException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/ResourceNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/ModelFormatException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/UnauthorizedException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Helpers/ClaimsHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Helpers/ErrorHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/ExceptionMiddlewareExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cryptocop.Software.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/AddressInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/AddressInputModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Models/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Contexts/CryptocopDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Contexts/CryptocopDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Cryptocop.Software.API.Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Cryptocop.Software.API.Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/TokenRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/TokenRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/ITokenRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/ITokenRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Cryptocop.Software.API.Repositories.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Cryptocop.Software.API.Repositories.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Helpers/HttpResponseMessageExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Helpers/HttpResponseMessageExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/JwtTokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Repositories.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/bin/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Cryptocop.Software.API.Services.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Cryptocop.Software.API.Services.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.Services.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API.Services/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AddressController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AddressController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Cryptocop.Software.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Cryptocop.Software.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/PaymentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/PaymentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/JwtAuthenticationMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/JwtAuthenticationMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/CryptocopDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Migrations/CryptocopDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Cryptocop.Software.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Cryptocop.Software.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/Debug/netcoreapp3.1/Cryptocop.Software.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cryptocop.Software.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cryptocop.Software.API/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,66 +90,70 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../VEFT-Technical_Radiation/TechnicalRadiation/TechnicalRadiation.WebApi/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../VEFT-Technical_Radiation/TechnicalRadiation/TechnicalRadiation.Models/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F7AFAF01-9550-4C73-87BE-31162333F4B5/3/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C6663515-F1EC-4E78-BFF8-DF11F22F7BBE/2/Host.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VEFT-SA-5-Flamingo_Records/customer-service/customer-service/Controllers/CustomerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VEFT-SA-5-Flamingo_Records/customer-service/customer-service/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../VEFT-Technical_Radiation/TechnicalRadiation/TechnicalRadiation.WebApi/Extensions/ExceptionMiddlewareExtension.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../WebServicesRU/net-core/secret-service/RU.WebServices.SecretService.API/Middlewares/JwtAuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/21/WebHostBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../VEFT-Technical_Radiation/TechnicalRadiation/TechnicalRadiation.WebApi/Controllers/TechnicalRadiationController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Contexts/CryptoCopDbContext.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/OrderItem.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/PaymentCard.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/ShoppingCartItem.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Contexts/CryptoCopDbContext.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/ShoppingCart.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/Order.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/appsettings.json" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/ShoppingCartRepository.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/OrderRepository.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Interfaces/IJwtTokenService.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/JwtToken.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/OrderService.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ShoppingCartService.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/OrderController.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/PaymentController.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ShoppingCartController.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Interfaces/ITokenRepository.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException+.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/JwtTokenService.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AccountService.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/TokenRepository.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/AddressInputModel.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/JwtAuthenticationMiddleware.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/Address.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Entities/User.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Contexts/CryptocopDbContext.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/AddressService.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AddressController.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Startup.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Helpers/HttpResponseMessageExtensions.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Helpers/Envelope.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyResponse.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/CryptoCurrencyDto.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/Envelope.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API/Mappings/MappingProfile.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeResponse.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/DTOs/ExchangeDto.cs" />
-        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" />
         <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/ExchangeService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/TokenService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/ResourceNotFoundException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/ModelFormatException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/ResourceAlreadyExistsException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/ExceptionModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/ResourceAlreadyExistsException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/ResourceNotFoundException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Exceptions/InvalidLoginException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Models/InputModels/RegisterInputModel.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/ErrorHandler.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Startup.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/TokenRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/AddressRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/PaymentRepository.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/PaymentService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/ExchangeController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/CryptoCurrencyController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Helpers/ErrorHandler.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API.Services/Implementations/CryptoCurrencyService.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Exceptions/UnauthorizedException.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/ExceptionMiddlewareExtension.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Helpers/ClaimsHelper.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/AddressController.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Controllers/PaymentController.cs" />
+        <option value="$PROJECT_DIR$/../../WebServicesRU/net-core/secret-service/RU.WebServices.SecretService.API/Middlewares/JwtAuthenticationMiddleware.cs" />
+        <option value="$PROJECT_DIR$/Cryptocop.Software.API/Middlewares/JwtAuthenticationMiddleware.cs" />
       </list>
     </option>
   </component>
@@ -255,7 +222,8 @@
       <workItem from="1603449290419" duration="3975000" />
       <workItem from="1603454603734" duration="6328000" />
       <workItem from="1603476219279" duration="24720000" />
-      <workItem from="1603621923746" duration="53636000" />
+      <workItem from="1603621923746" duration="67581000" />
+      <workItem from="1603808715813" duration="3735000" />
     </task>
     <task id="LOCAL-00001" summary="More Crud">
       <created>1603457155538</created>
@@ -271,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603621344919</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="externalapis implemented">
+      <created>1603735599374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603735599374</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +271,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="More Crud" />
     <MESSAGE value="database crud stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="database crud stuff" />
+    <MESSAGE value="externalapis implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="externalapis implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="826" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603641223215">
@@ -307,86 +283,86 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="639" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603621361520" />
-    <state width="1875" height="567" key="GridCell.Tab.0.bottom" timestamp="1603734065516">
+    <state width="1875" height="261" key="GridCell.Tab.0.bottom" timestamp="1603810931635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="567" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603734065516" />
-    <state width="1875" height="567" key="GridCell.Tab.0.center" timestamp="1603734065516">
+    <state width="1875" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603810931635" />
+    <state width="1875" height="261" key="GridCell.Tab.0.center" timestamp="1603810931635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="567" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603734065516" />
-    <state width="1875" height="567" key="GridCell.Tab.0.left" timestamp="1603734065516">
+    <state width="1875" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603810931635" />
+    <state width="1875" height="261" key="GridCell.Tab.0.left" timestamp="1603810931635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="567" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603734065516" />
-    <state width="1875" height="567" key="GridCell.Tab.0.right" timestamp="1603734065516">
+    <state width="1875" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603810931635" />
+    <state width="1875" height="261" key="GridCell.Tab.0.right" timestamp="1603810931635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="567" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603734065516" />
-    <state width="1875" height="354" key="GridCell.Tab.1.bottom" timestamp="1603733434420">
+    <state width="1875" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603810931635" />
+    <state width="1875" height="537" key="GridCell.Tab.1.bottom" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.1.center" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.1.center" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.1.left" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.1.left" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.1.right" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.1.right" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.2.bottom" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.2.bottom" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.2.center" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.2.center" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.2.left" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.2.left" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.2.right" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.2.right" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.3.bottom" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.3.bottom" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.3.center" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.3.center" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.3.left" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.3.left" timestamp="1603791324920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.3.right" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324920" />
+    <state width="1875" height="537" key="GridCell.Tab.3.right" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.4.bottom" timestamp="1603733434421">
+    <state width="1875" height="537" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.4.bottom" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434421" />
-    <state width="1875" height="354" key="GridCell.Tab.4.center" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.4.bottom/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.4.center" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.4.left" timestamp="1603733434420">
+    <state width="1875" height="537" key="GridCell.Tab.4.center/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.4.left" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434420" />
-    <state width="1875" height="354" key="GridCell.Tab.4.right" timestamp="1603733434421">
+    <state width="1875" height="537" key="GridCell.Tab.4.left/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
+    <state width="1875" height="537" key="GridCell.Tab.4.right" timestamp="1603791324921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="354" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733434421" />
+    <state width="1875" height="537" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603791324921" />
     <state x="551" y="251" key="Rider.ProjectTemplateDialog.Size" timestamp="1603461970109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -399,126 +375,130 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="922" y="152" width="998" height="708" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603542719083" />
-    <state x="551" y="239" key="Vcs.Push.Dialog.v2" timestamp="1603621347084">
+    <state x="551" y="239" key="Vcs.Push.Dialog.v2" timestamp="1603735602757">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603621347084" />
+    <state x="551" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603735602757" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1603733129246">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603733129246" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603731362534">
+    <state x="2078" y="115" width="1426" height="782" key="dock-window-1" timestamp="1603755271398">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2078" y="115" width="1426" height="782" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603755271398" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603756061442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603731362534" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603756061442" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>45</line>
+          <line>44</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="44">
             <startOffsets>
-              <option value="1680" />
+              <option value="1555" />
             </startOffsets>
             <endOffsets>
-              <option value="1729" />
+              <option value="1604" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>47</line>
+          <line>46</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="46">
             <startOffsets>
-              <option value="1825" />
+              <option value="-1" />
             </startOffsets>
             <endOffsets>
-              <option value="1825" />
+              <option value="-1" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>48</line>
+          <line>47</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="47">
             <startOffsets>
-              <option value="1838" />
-              <option value="1869" />
+              <option value="1713" />
+              <option value="-1" />
             </startOffsets>
             <endOffsets>
-              <option value="1855" />
-              <option value="1869" />
+              <option value="1730" />
+              <option value="-1" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>60</line>
+          <line>59</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="49">
             <startOffsets>
-              <option value="2145" />
+              <option value="2020" />
             </startOffsets>
             <endOffsets>
-              <option value="2191" />
+              <option value="2066" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>61</line>
+          <line>60</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="50">
             <startOffsets>
-              <option value="2204" />
+              <option value="2079" />
             </startOffsets>
             <endOffsets>
-              <option value="2245" />
+              <option value="2120" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>62</line>
+          <line>61</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="51">
             <startOffsets>
-              <option value="2258" />
+              <option value="2133" />
             </startOffsets>
             <endOffsets>
-              <option value="2285" />
+              <option value="2160" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>63</line>
+          <line>62</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="52">
             <startOffsets>
-              <option value="2298" />
+              <option value="2173" />
             </startOffsets>
             <endOffsets>
-              <option value="2313" />
+              <option value="2188" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Cryptocop.Software.API.Repositories/Implementations/UserRepository.cs</url>
-          <line>46</line>
+          <line>45</line>
           <properties documentPath="C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Repositories\Implementations\UserRepository.cs" initialLine="45">
             <startOffsets>
-              <option value="1742" />
-              <option value="1790" />
+              <option value="1617" />
+              <option value="1665" />
             </startOffsets>
             <endOffsets>
-              <option value="1824" />
-              <option value="1822" />
+              <option value="1699" />
+              <option value="1697" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />
