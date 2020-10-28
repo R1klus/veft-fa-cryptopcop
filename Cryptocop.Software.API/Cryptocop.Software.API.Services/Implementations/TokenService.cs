@@ -40,7 +40,7 @@ namespace Cryptocop.Software.API.Services.Implementations
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("email", user.Email),
+                    new Claim("name", user.Email),
                     new Claim("fullName", user.FullName),
                     new Claim("tokenId", user.TokenId.ToString())
                 }),

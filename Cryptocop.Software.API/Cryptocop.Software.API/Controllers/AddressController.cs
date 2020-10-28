@@ -27,7 +27,7 @@ namespace Cryptocop.Software.API.Controllers
         [Route("", Name = "GetAllAddresses")]
         public IActionResult GetAllAddresses()
         {
-            var email = ClaimsHelper.GetClaim(User, "email");
+            var email = ClaimsHelper.GetClaim(User, "name");
             return Ok(_addressService.GetAllAddresses(email));
         }
 
@@ -39,7 +39,7 @@ namespace Cryptocop.Software.API.Controllers
             {
                 ErrorHandler.GetModelErrors(ModelState);
             }
-            var email = ClaimsHelper.GetClaim(User, "email");
+            var email = ClaimsHelper.GetClaim(User, "name");
             _addressService.AddAddress(email, address);
 
             return CreatedAtRoute("AddAddress", null);
@@ -49,7 +49,7 @@ namespace Cryptocop.Software.API.Controllers
         [Route("{addressId}", Name = "DeleteAddressById")]
         public IActionResult DeleteAddressById(int addressId)
         {
-            var email = ClaimsHelper.GetClaim(User, "email");
+            var email = ClaimsHelper.GetClaim(User, "name");
             _addressService.DeleteAddress(email, addressId);
             return NoContent();
         }

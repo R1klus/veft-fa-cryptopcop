@@ -6,6 +6,7 @@ using Cryptocop.Software.API.Models.Entities;
 using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Repositories.Contexts;
 using Cryptocop.Software.API.Repositories.Exceptions;
+using Cryptocop.Software.API.Repositories.Helpers;
 using Cryptocop.Software.API.Repositories.Interfaces;
 
 namespace Cryptocop.Software.API.Repositories.Implementations
@@ -29,11 +30,12 @@ namespace Cryptocop.Software.API.Repositories.Implementations
             var email = _dbContext.Users.FirstOrDefault(u => inputModel.Email == u.Email);
             if (email != null) {throw new ResourceAlreadyExistsException();}
             var user = _mapper.Map<User>(inputModel);
+            
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
 
             var token = _tokenRepository.CreateNewToken();
-
+            
             var userDto = _mapper.Map<UserDto>(user);
             userDto.TokenId = token.Id;
             
@@ -42,20 +44,8 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public UserDto AuthenticateUser(LoginInputModel loginInputModel)
         {
-            var incUser = _mapper.Map<User>(loginInputModel);
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == loginInputModel.Email);
-
-            if (user == null)
-            {
-                return null;
-                
-            }
-            var passwordMismatch = incUser.HashedPassword != user.HashedPassword;
-            if (passwordMismatch)
-            {
-                return null;
-                
-            }
+            var user = _dbContext.Users.FirstOrDefault(u => u.Email == loginInputModel.Email && HashingHelper.HashPassword(loginInputModel.Password) == u.HashedPassword);
+            if (user == null) { return null; }
             
             var token = _tokenRepository.CreateNewToken();
             var userDto = _mapper.Map<UserDto>(user);

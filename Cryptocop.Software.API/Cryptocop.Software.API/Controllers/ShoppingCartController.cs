@@ -1,4 +1,6 @@
 ﻿using System;
+using Cryptocop.Software.API.Helpers;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,24 +19,53 @@ namespace Cryptocop.Software.API.Controllers
             _shoppingCartService = shoppingCartService;
         }
 
-        [HttpPost]
-        public IActionResult AddItemToCart()
+        [HttpGet]
+        [Route("", Name = "GetAllCartItems")]
+        public IActionResult GetAllCartItems()
         {
-            throw new NotImplementedException();
+            var email = ClaimsHelper.GetClaim(User, "name");
+            return Ok(_shoppingCartService.GetCartItems(email));
+        }
+
+        [HttpPost]
+        [Route("", Name = "AddItemToCart")]
+        public IActionResult AddItemToCart([FromBody] ShoppingCartItemInputModel cartItem)
+        {
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
+
+            var email = ClaimsHelper.GetClaim(User, "name");
+            _shoppingCartService.AddCartItem(email, cartItem);
+            return CreatedAtRoute("AddItemToCart", null);
+        }
+        
+        [HttpPatch]
+        [Route("{itemId}", Name = "UpdateQuantity")]
+        public IActionResult UpdateQuantity([FromBody] ShoppingCartItemInputModel cartItem, int itemId)
+        {
+            var email = ClaimsHelper.GetClaim(User, "name");
+            _shoppingCartService.UpdateCartItemQuantity(email, itemId, cartItem.Quantity);
+            return Ok();
         }
 
         [HttpDelete]
-        [Route("id:int")]
-        public IActionResult DeleteItemFromCart()
+        [Route("", Name = "ClearCart")]
+        public IActionResult ClearCart()
         {
-            throw new NotImplementedException();
+            var email = ClaimsHelper.GetClaim(User, "name");
+            _shoppingCartService.ClearCart(email);
+            return NoContent();
         }
-
-        [HttpPatch]
-        [Route("id:int")]
-        public IActionResult UpdateQuantity()
+        
+        [HttpDelete]
+        [Route("{itemId}", Name = "DeleteItemFromCart")]
+        public IActionResult DeleteItemFromCart(int itemId)
         {
-            throw new NotImplementedException();
+            var email = ClaimsHelper.GetClaim(User, "name");
+            _shoppingCartService.RemoveCartItem(email, itemId);
+            return NoContent();
         }
     }
 }

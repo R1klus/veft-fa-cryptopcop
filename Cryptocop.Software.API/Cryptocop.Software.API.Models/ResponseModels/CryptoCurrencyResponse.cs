@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Cryptocop.Software.API.Models.DTOs
+namespace Cryptocop.Software.API.Models.ResponseModels
 {
     public class CryptoCurrencyResponse
     {

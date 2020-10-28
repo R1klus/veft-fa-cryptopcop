@@ -3,15 +3,17 @@ using System;
 using Cryptocop.Software.API.Repositories.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Cryptocop.Software.API.Migrations
 {
     [DbContext(typeof(CryptocopDbContext))]
-    partial class CryptocopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201028005137_updatestocart")]
+    partial class updatestocart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

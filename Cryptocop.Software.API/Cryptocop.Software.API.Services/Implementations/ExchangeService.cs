@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Cryptocop.Software.API.Models;
 using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.ResponseModels;
 using Cryptocop.Software.API.Services.Helpers;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore.Query;

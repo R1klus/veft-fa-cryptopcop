@@ -16,21 +16,17 @@ namespace Cryptocop.Software.API.Repositories.Contexts
             modelBuilder.Entity<PaymentCard>()
                 .HasOne(p => p.User)
                 .WithMany(u => u.PaymentCards);
-
-            modelBuilder.Entity<Address>()
-                .HasOne(a => a.User)
-                .WithMany(u => u.Address);
-
+            
             modelBuilder.Entity<Address>(entity =>
             {
-                entity.HasIndex(e => new
+                entity.HasIndex(a => new
                 {
-                    e.StreetName,
-                    e.HouseNumber,
-                    e.City,
-                    e.Country,
-                    e.ZipCode,
-                    e.UserId
+                    a.StreetName,
+                    a.HouseNumber,
+                    a.City,
+                    a.Country,
+                    a.ZipCode,
+                    a.UserId
                 }).IsUnique();
             });
             
@@ -43,6 +39,7 @@ namespace Cryptocop.Software.API.Repositories.Contexts
                 .WithMany(u => u.Orders);
             
             // Shopping Cart
+
             modelBuilder.Entity<ShoppingCartItem>()
                 .HasOne(si => si.ShoppingCart)
                 .WithMany(s => s.ShoppingCartItems);

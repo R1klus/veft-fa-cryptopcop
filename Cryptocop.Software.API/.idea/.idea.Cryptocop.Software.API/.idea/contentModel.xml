@@ -49,6 +49,12 @@
           <e p="20201026100140_uniqueAddress2.Designer.cs" t="Include" />
           <e p="20201026101017_changedAddressestoAddressforUser.cs" t="Include" />
           <e p="20201026101017_changedAddressestoAddressforUser.Designer.cs" t="Include" />
+          <e p="20201027223433_addressToAddresses.cs" t="Include" />
+          <e p="20201027223433_addressToAddresses.Designer.cs" t="Include" />
+          <e p="20201028005137_updatestocart.cs" t="Include" />
+          <e p="20201028005137_updatestocart.Designer.cs" t="Include" />
+          <e p="20201028005758_updatestocart2.cs" t="Include" />
+          <e p="20201028005758_updatestocart2.Designer.cs" t="Include" />
           <e p="CryptocopDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -70,9 +76,7 @@
         <e p="DTOs" t="Include">
           <e p="AddressDto.cs" t="Include" />
           <e p="CryptocurrencyDto.cs" t="Include" />
-          <e p="CryptoCurrencyResponse.cs" t="Include" />
           <e p="ExchangeDto.cs" t="Include" />
-          <e p="ExchangeResponse.cs" t="Include" />
           <e p="OrderDto.cs" t="Include" />
           <e p="OrderItemDto.cs" t="Include" />
           <e p="PaymentCardDto.cs" t="Include" />
@@ -105,6 +109,10 @@
               <e p="Cryptocop.Software.API.Models.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="ResponseModels" t="Include">
+          <e p="CryptoCurrencyResponse.cs" t="Include" />
+          <e p="ExchangeResponse.cs" t="Include" />
         </e>
       </e>
       <e p="Cryptocop.Software.API.Repositories" t="IncludeRecursive">
@@ -149,6 +157,9 @@
       <e p="Cryptocop.Software.API.Services" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Cryptocop.Software.API.Services.csproj" t="IncludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="InvalidProductIdentifierException.cs" t="Include" />
+        </e>
         <e p="Helpers" t="Include">
           <e p="HttpResponseMessageExtensions.cs" t="Include" />
         </e>

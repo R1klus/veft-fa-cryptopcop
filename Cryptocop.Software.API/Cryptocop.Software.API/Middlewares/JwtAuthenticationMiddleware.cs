@@ -46,7 +46,8 @@ namespace Cryptocop.Software.API.Middlewares
                         {
                             throw new UnauthorizedException();
                             /*context.Response.StatusCode = 401;
-                            await context.Response.WriteAsync("JWT token provided is invalid");*/
+                            context.Fail("");
+                            /#1#/await context.Response.WriteAsync("JWT token provided is invalid");#1#*/
                         }
                     }
                 };

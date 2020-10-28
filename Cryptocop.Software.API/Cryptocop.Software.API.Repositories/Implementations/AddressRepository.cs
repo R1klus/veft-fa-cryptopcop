@@ -27,7 +27,6 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
             if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
-
             var addressEntity = _mapper.Map<Address>(address);
             addressEntity.UserId = user.Id;
 

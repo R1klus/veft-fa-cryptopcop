@@ -25,7 +25,7 @@ namespace Cryptocop.Software.API.Controllers
         [Route("", Name = "GetPayments")]
         public IActionResult GetPayments()
         {
-            var email = ClaimsHelper.GetClaim(User, "email");
+            var email = ClaimsHelper.GetClaim(User, "name");
             var paymentCards = _paymentService.GetStoredPaymentCards(email);
             return Ok(paymentCards);
         }
@@ -38,7 +38,7 @@ namespace Cryptocop.Software.API.Controllers
             {
                 ErrorHandler.GetModelErrors(ModelState);
             }
-            var email = ClaimsHelper.GetClaim(User, "email");
+            var email = ClaimsHelper.GetClaim(User, "name");
             _paymentService.AddPaymentCard(email, paymentCard);
             return CreatedAtRoute("AddPaymentMethod", null);
         }

@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AutoMapper;
 using Cryptocop.Software.API.Models.DTOs;
+using Cryptocop.Software.API.Models.ResponseModels;
 using Cryptocop.Software.API.Services.Helpers;
 using Cryptocop.Software.API.Services.Interfaces;
 
@@ -27,10 +28,10 @@ namespace Cryptocop.Software.API.Services.Implementations
         {
             var allowedCurrencies = new List<string>()
             {
-                "BTC",
-                "ETH",
-                "USDT",
-                "XMR"
+                "bitcoin",
+                "ethereum",
+                "tether",
+                "monero"
             };
             var response = await Client.GetAsync("https://data.messari.io/api/v2/assets?fields=" +
                                                  "id," +
@@ -43,7 +44,7 @@ namespace Cryptocop.Software.API.Services.Implementations
             var dataDto = data
                 .Select(c => _mapper
                     .Map<CryptoCurrencyDto>(c))
-                .Where(c => allowedCurrencies.Contains(c.Symbol));
+                .Where(c => allowedCurrencies.Contains(c.Slug));
      
             
             return dataDto;

@@ -2,6 +2,7 @@
 using Cryptocop.Software.API.Exceptions;
 using Cryptocop.Software.API.Models;
 using Cryptocop.Software.API.Repositories.Exceptions;
+using Cryptocop.Software.API.Services.Exceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
@@ -26,9 +27,10 @@ namespace Cryptocop.Software.API.Middlewares
                         ResourceAlreadyExistsException _ => (int) HttpStatusCode.Conflict,
                         InvalidLoginException _ => (int) HttpStatusCode.Unauthorized,
                         UnauthorizedException _ => (int) HttpStatusCode.Unauthorized,
+                        InvalidProductIdentifierException _ => (int) HttpStatusCode.PreconditionFailed,
                         _ => (int) HttpStatusCode.InternalServerError
                     };
-
+                    
                     context.Response.ContentType = "application/json";
                     context.Response.StatusCode = statusCode;
 

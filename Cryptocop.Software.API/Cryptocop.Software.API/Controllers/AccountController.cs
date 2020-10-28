@@ -51,7 +51,7 @@ namespace Cryptocop.Software.API.Controllers
                 ErrorHandler.GetModelErrors(ModelState);
             }
             var user = _accountService.AuthenticateUser(login);
-            if (user == null) { return Unauthorized(); }
+            if (user == null) { throw new UnauthorizedException("Invalid login Credentials"); }
 
             return Ok(_tokenService.GenerateJwtToken(user));
         }
