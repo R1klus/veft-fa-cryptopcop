@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Cryptocop.Software.API.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,11 +42,11 @@ namespace Cryptocop.Software.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    StreetName = table.Column<string>(nullable: true),
-                    HouseNumber = table.Column<string>(nullable: true),
-                    ZipCode = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true),
+                    StreetName = table.Column<string>(nullable: false),
+                    HouseNumber = table.Column<string>(nullable: false),
+                    ZipCode = table.Column<string>(nullable: false),
+                    Country = table.Column<string>(nullable: false),
+                    City = table.Column<string>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -180,7 +180,12 @@ namespace Cryptocop.Software.API.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_UserId",
                 table: "Addresses",
-                column: "UserId",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Addresses_StreetName_HouseNumber_City_Country_ZipCode_UserId",
+                table: "Addresses",
+                columns: new[] { "StreetName", "HouseNumber", "City", "Country", "ZipCode", "UserId" },
                 unique: true);
 
             migrationBuilder.CreateIndex(

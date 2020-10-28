@@ -23,5 +23,9 @@
     <ProjectReference Include="..\Cryptocop.Software.API.Services\Cryptocop.Software.API.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations" />
+  </ItemGroup>
+
 
 </Project>

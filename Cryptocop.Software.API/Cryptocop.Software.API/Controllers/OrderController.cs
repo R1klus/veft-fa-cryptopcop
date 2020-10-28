@@ -1,4 +1,6 @@
 ﻿using System;
+using Cryptocop.Software.API.Helpers;
+using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,17 +20,24 @@ namespace Cryptocop.Software.API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("", Name = "GetAllOrders")]
         public IActionResult GetAllOrders()
         {
-            throw new NotImplementedException();
+            var email = ClaimsHelper.GetClaim(User, "name");
+            return Ok(_orderService.GetOrders(email));
         }
 
         [HttpPost]
-        [Route("")]
-        public IActionResult CreateNewOrder()
+        [Route("", Name = "CreateNewOrder")]
+        public IActionResult CreateNewOrder([FromBody] OrderInputModel orderModel)
         {
-            throw new NotImplementedException();
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
+            var email = ClaimsHelper.GetClaim(User, "name");
+            _orderService.CreateNewOrder(email, orderModel);
+            return CreatedAtRoute("CreateNewOrder", null);
         }
         
         

@@ -13,7 +13,13 @@ namespace Cryptocop.Software.API.Mappings
     {
         public MappingProfile()
         {
-            // DTOs
+            // Entities => Entities
+            CreateMap<ShoppingCartItem, OrderItem>()
+                .ForMember(src => src.TotalPrice,
+                    opt => opt
+                        .MapFrom(src => src.Quantity * src.UnitPrice));
+            
+            // Entities => DTOs
             CreateMap<Address, AddressDto>();
             CreateMap<ShoppingCartItem, ShoppingCartItemDto>()
                 .ForMember(src => src.TotalPrice, 
@@ -24,7 +30,7 @@ namespace Cryptocop.Software.API.Mappings
             CreateMap<PaymentCard, PaymentCardDto>();
             CreateMap<User, UserDto>();
 
-            // InputModels
+            // InputModels => Entities
             CreateMap<AddressInputModel, Address>();
             CreateMap<LoginInputModel, User>()
                 .ForMember(src => src.HashedPassword,
@@ -37,14 +43,16 @@ namespace Cryptocop.Software.API.Mappings
                         MapFrom(src => HashingHelper
                             .HashPassword(src.Password)));
             CreateMap<ShoppingCartItemInputModel, ShoppingCartItem>();
+            CreateMap<PaymentCardInputModel, PaymentCard>();
             
-            // Entities
+            // DTOs => Entities
             CreateMap<AddressDto, Address>();
             CreateMap<OrderDto, Order>();
             CreateMap<OrderItemDto, OrderItem>();
             CreateMap<PaymentCardDto, PaymentCard>();
             CreateMap<UserDto, User>();
-
+            
+            // ExternalResponses => DTOs
             CreateMap<CryptoCurrencyResponse, CryptoCurrencyDto>();
             CreateMap<ExchangeResponse, ExchangeDto>();
         }

@@ -28,12 +28,10 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
             if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
-            
+
             var cart = _dbContext.ShoppingCarts.FirstOrDefault(s => s.User.Email == email) ?? CreateCart(user.Id);
-            if (_dbContext.ShoppingCartItems.FirstOrDefault() == null)
-            {
-                return new List<ShoppingCartItemDto>();
-            }
+            if (_dbContext.ShoppingCartItems.FirstOrDefault(ci => ci.ShoppingCartId == cart.Id) == null) { return new List<ShoppingCartItemDto>(); }
+            
             return _dbContext.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartId == cart.Id)
                 .Select(sci => _mapper.Map<ShoppingCartItemDto>(sci));
@@ -42,7 +40,6 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         public void AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem, float priceInUsd)
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
-            Console.WriteLine(user);
             if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
 
             var cart = _dbContext.ShoppingCarts.FirstOrDefault(s => s.User.Email == email) ?? CreateCart(user.Id);

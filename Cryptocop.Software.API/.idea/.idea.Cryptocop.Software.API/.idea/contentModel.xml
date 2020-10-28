@@ -37,24 +37,8 @@
           <e p="JwtAuthenticationMiddleware.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20201025101129_InitialMigration.cs" t="Include" />
-          <e p="20201025101129_InitialMigration.Designer.cs" t="Include" />
-          <e p="20201026092945_changedAddressToMany.cs" t="Include" />
-          <e p="20201026092945_changedAddressToMany.Designer.cs" t="Include" />
-          <e p="20201026095426_uniqueAddress.cs" t="Include" />
-          <e p="20201026095426_uniqueAddress.Designer.cs" t="Include" />
-          <e p="20201026095821_removedForeigKeyAddress.cs" t="Include" />
-          <e p="20201026095821_removedForeigKeyAddress.Designer.cs" t="Include" />
-          <e p="20201026100140_uniqueAddress2.cs" t="Include" />
-          <e p="20201026100140_uniqueAddress2.Designer.cs" t="Include" />
-          <e p="20201026101017_changedAddressestoAddressforUser.cs" t="Include" />
-          <e p="20201026101017_changedAddressestoAddressforUser.Designer.cs" t="Include" />
-          <e p="20201027223433_addressToAddresses.cs" t="Include" />
-          <e p="20201027223433_addressToAddresses.Designer.cs" t="Include" />
-          <e p="20201028005137_updatestocart.cs" t="Include" />
-          <e p="20201028005137_updatestocart.Designer.cs" t="Include" />
-          <e p="20201028005758_updatestocart2.cs" t="Include" />
-          <e p="20201028005758_updatestocart2.Designer.cs" t="Include" />
+          <e p="20201028140228_initialMigration.cs" t="Include" />
+          <e p="20201028140228_initialMigration.Designer.cs" t="Include" />
           <e p="CryptocopDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

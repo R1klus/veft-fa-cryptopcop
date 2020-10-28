@@ -9,20 +9,24 @@ namespace Cryptocop.Software.API.Services.Implementations
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IShoppingCartRepository _shoppingCartRepository;
 
-        public OrderService(IOrderRepository orderRepository)
+        public OrderService(IOrderRepository orderRepository, IShoppingCartRepository shoppingCartRepository)
         {
             _orderRepository = orderRepository;
+            _shoppingCartRepository = shoppingCartRepository;
         }
 
         public IEnumerable<OrderDto> GetOrders(string email)
         {
-            throw new System.NotImplementedException();
+            return _orderRepository.GetOrders(email);
         }
 
         public void CreateNewOrder(string email, OrderInputModel order)
         {
-            throw new System.NotImplementedException();
+            _orderRepository.CreateNewOrder(email, order);
+            _shoppingCartRepository.DeleteCart(email);
+            // TODO: CALL MESSAGE BROKER
         }
     }
 }

@@ -13,9 +13,14 @@ namespace Cryptocop.Software.API.Repositories.Contexts
         {
             
             // User
+            
             modelBuilder.Entity<PaymentCard>()
                 .HasOne(p => p.User)
                 .WithMany(u => u.PaymentCards);
+
+            modelBuilder.Entity<Address>()
+                .HasOne(a => a.User)
+                .WithMany(u => u.Addresses);
             
             modelBuilder.Entity<Address>(entity =>
             {
@@ -29,22 +34,23 @@ namespace Cryptocop.Software.API.Repositories.Contexts
                     a.UserId
                 }).IsUnique();
             });
+
+            // Shopping Cart
             
             modelBuilder.Entity<ShoppingCart>()
                 .HasOne(s => s.User)
                 .WithOne(u => u.ShoppingCart);
-
-            modelBuilder.Entity<Order>()
-                .HasOne(o => o.User)
-                .WithMany(u => u.Orders);
-            
-            // Shopping Cart
 
             modelBuilder.Entity<ShoppingCartItem>()
                 .HasOne(si => si.ShoppingCart)
                 .WithMany(s => s.ShoppingCartItems);
 
             // Order
+            
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders);
+            
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
                 .WithMany(o => o.OrderItems);

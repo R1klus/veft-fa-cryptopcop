@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cryptocop.Software.API.Migrations
 {
     [DbContext(typeof(CryptocopDbContext))]
-    [Migration("20201028005137_updatestocart")]
-    partial class updatestocart
+    [Migration("20201028140228_initialMigration")]
+    partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
