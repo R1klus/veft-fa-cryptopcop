@@ -60,7 +60,6 @@ namespace Cryptocop.Software.API.Controllers
         [Route("signout", Name = "SignOut")]
         public IActionResult SignOut()
         {
-            
             int.TryParse(ClaimsHelper.GetClaim(User, "tokenId"), out var tokenId);
             _accountService.Logout(tokenId);
             return NoContent();

@@ -15,9 +15,9 @@ namespace Cryptocop.Software.API.Services.Implementations
             _addressRepository = addressRepository;
         }
 
-        public void AddAddress(string email, AddressInputModel address)
+        public AddressDto AddAddress(string email, AddressInputModel address)
         {
-            _addressRepository.AddAddress(email, address);
+            return _addressRepository.AddAddress(email, address);
         }
 
         public IEnumerable<AddressDto> GetAllAddresses(string email)

@@ -37,7 +37,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
                 .Select(sci => _mapper.Map<ShoppingCartItemDto>(sci));
         }
 
-        public void AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem, float priceInUsd)
+        public ShoppingCartItemDto AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem, float priceInUsd)
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
             if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
@@ -50,6 +50,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
             cartItem.UnitPrice = priceInUsd;
             _dbContext.Add(cartItem);
             _dbContext.SaveChanges();
+            return _mapper.Map<ShoppingCartItemDto>(cartItem);
         }
 
         public void RemoveCartItem(string email, int id)

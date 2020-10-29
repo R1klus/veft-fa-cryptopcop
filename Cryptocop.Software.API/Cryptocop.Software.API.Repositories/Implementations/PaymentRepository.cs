@@ -21,7 +21,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
             _mapper = mapper;
         }
 
-        public void AddPaymentCard(string email, PaymentCardInputModel paymentCard)
+        public PaymentCardDto AddPaymentCard(string email, PaymentCardInputModel paymentCard)
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
             if (user == null){ throw new ResourceNotFoundException($"User with email {email} not found");}
@@ -30,6 +30,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
             paymentEntity.UserId = user.Id;
             _dbContext.PaymentCards.Add(paymentEntity);
             _dbContext.SaveChanges();
+            return _mapper.Map<PaymentCardDto>(paymentEntity);
 
         }
 

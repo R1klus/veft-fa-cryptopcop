@@ -39,8 +39,8 @@ namespace Cryptocop.Software.API.Controllers
                 ErrorHandler.GetModelErrors(ModelState);
             }
             var email = ClaimsHelper.GetClaim(User, "name");
-            _paymentService.AddPaymentCard(email, paymentCard);
-            return CreatedAtRoute("AddPaymentMethod", null);
+            var newPaymentCard = _paymentService.AddPaymentCard(email, paymentCard);
+            return CreatedAtRoute("AddPaymentMethod", new { id = newPaymentCard.Id}, null);
         }
     }
 }

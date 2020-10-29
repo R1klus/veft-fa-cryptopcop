@@ -27,16 +27,16 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public UserDto CreateUser(RegisterInputModel inputModel)
         {
-            var email = _dbContext.Users.FirstOrDefault(u => inputModel.Email == u.Email);
-            if (email != null) {throw new ResourceAlreadyExistsException();}
-            var user = _mapper.Map<User>(inputModel);
+            var user = _dbContext.Users.FirstOrDefault(u => inputModel.Email == u.Email);
+            if (user != null) {throw new ResourceAlreadyExistsException();}
+            var entity = _mapper.Map<User>(inputModel);
             
-            _dbContext.Users.Add(user);
+            _dbContext.Users.Add(entity);
             _dbContext.SaveChanges();
 
             var token = _tokenRepository.CreateNewToken();
             
-            var userDto = _mapper.Map<UserDto>(user);
+            var userDto = _mapper.Map<UserDto>(entity);
             userDto.TokenId = token.Id;
             
             return userDto;

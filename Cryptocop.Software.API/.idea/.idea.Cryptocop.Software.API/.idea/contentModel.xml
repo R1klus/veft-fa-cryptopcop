@@ -145,6 +145,7 @@
           <e p="InvalidProductIdentifierException.cs" t="Include" />
         </e>
         <e p="Helpers" t="Include">
+          <e p="CryptocurrencyHelper.cs" t="Include" />
           <e p="HttpResponseMessageExtensions.cs" t="Include" />
         </e>
         <e p="Implementations" t="Include">

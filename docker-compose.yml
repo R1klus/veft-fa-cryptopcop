@@ -1,0 +1,15 @@
+version: '3'
+services:
+    crypto-api-gateway:
+        build: ./Cryptocop.Software.API
+        container_name: crypto-api-gateway
+        ports:
+            - "5000:5000"
+        networks:
+            - "crypto-network"     
+   
+
+networks:
+  crypto-network:
+    driver: bridge        
+      

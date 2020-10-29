@@ -26,7 +26,7 @@ namespace Cryptocop.Software.API.Services.Implementations
             return _shoppingCartRepository.GetCartItems(email);
         }
 
-        public Task AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem)
+        public ShoppingCartItemDto AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem)
         {
             var allowedCurrencies = new List<string>()
             {
@@ -46,8 +46,7 @@ namespace Cryptocop.Software.API.Services.Implementations
  
             var data = response.DeserializeJsonToObject<CryptoCurrencyResponse>(true).Result;
             
-            _shoppingCartRepository.AddCartItem(email, shoppingCartItemItem, data.PriceInUsd);
-            return null;
+            return _shoppingCartRepository.AddCartItem(email, shoppingCartItemItem, data.PriceInUsd);
         }
 
         public void RemoveCartItem(string email, int id)

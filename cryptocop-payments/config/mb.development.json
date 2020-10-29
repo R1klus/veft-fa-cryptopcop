@@ -1,0 +1,6 @@
+{
+    "host": "<use-cloudamqp>",
+    "virtualhost": "<use-cloudamqp>",
+    "user": "<use-cloudamqp>",
+    "password": "<use-cloudamqp>"
+}

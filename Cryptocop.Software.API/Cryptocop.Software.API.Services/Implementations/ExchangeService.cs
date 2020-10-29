@@ -13,9 +13,18 @@ namespace Cryptocop.Software.API.Services.Implementations
 {
     public class ExchangeService : IExchangeService
     {
-        private static readonly HttpClient Client = new HttpClient();
+        
         private readonly IMapper _mapper;
 
+        private const string Uri =
+            "https://data.messari.io/api/v1/markets?fields=" +
+            "id," +
+            "exchange_name," +
+            "exchange_slug," +
+            "base_asset_symbol," +
+            "price_usd," +
+            "last_trade_at";
+            
         public ExchangeService(IMapper mapper)
         {
             _mapper = mapper;
@@ -23,14 +32,7 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public async Task<Envelope<ExchangeDto>> GetExchanges(int pageNumber = 1)
         {
-            var response = await Client.GetAsync("https://data.messari.io/api/v1/markets?fields=" +
-                                                 "id," +
-                                                 "exchange_name," +
-                                                 "exchange_slug," +
-                                                 "base_asset_symbol," +
-                                                 "price_usd," +
-                                                 "last_trade_at" +
-                                                 $"&page={pageNumber}");
+            var response = await CryptocurrencyHelper.Client.GetAsync(Uri+$"&page={pageNumber}");
             var exchangeDtos =  response
                 .DeserializeJsonToList<ExchangeResponse>()
                 .Result

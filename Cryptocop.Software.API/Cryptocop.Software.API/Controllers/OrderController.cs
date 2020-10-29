@@ -13,10 +13,12 @@ namespace Cryptocop.Software.API.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly IQueueService _queue;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, IQueueService queue)
         {
             _orderService = orderService;
+            _queue = queue;
         }
 
         [HttpGet]
@@ -36,9 +38,19 @@ namespace Cryptocop.Software.API.Controllers
                 ErrorHandler.GetModelErrors(ModelState);
             }
             var email = ClaimsHelper.GetClaim(User, "name");
-            _orderService.CreateNewOrder(email, orderModel);
-            return CreatedAtRoute("CreateNewOrder", null);
+            var newOrder = _orderService.CreateNewOrder(email, orderModel);
+            return CreatedAtRoute("CreateNewOrder", new { id = newOrder.Id }, null);
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("send")]
+        public IActionResult SendMessage()
+        {
+            _queue.PublishMessage("create-order", new { Message = "Hello World!"});
+            return Ok();
+        }
+        
         
         
     }

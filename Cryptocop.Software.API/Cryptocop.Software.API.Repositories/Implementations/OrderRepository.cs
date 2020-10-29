@@ -45,25 +45,26 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public OrderDto CreateNewOrder(string email, OrderInputModel order)
         {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
-            if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
+            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email)
+                ??throw new ResourceNotFoundException($"User with email {email} not found");
 
-            var address = _dbContext.Addresses.FirstOrDefault(a => a.Id == order.AddressId);
-            if (address == null) { throw new ResourceNotFoundException($"Address with Id {order.AddressId} not found"); }
-
-            var paymentCard = _dbContext.PaymentCards.FirstOrDefault(p => p.Id == order.PaymentCardId);
-            if (paymentCard == null) { throw new ResourceNotFoundException($"Payment card with Id {order.PaymentCardId} not found"); }
+            var address = _dbContext.Addresses.FirstOrDefault(a => a.Id == order.AddressId)
+                ??throw new ResourceNotFoundException($"Address with Id {order.AddressId} not found");
             
-            var cart = _dbContext.ShoppingCarts.FirstOrDefault(c => c.User.Email == email);
-            if(cart == null){throw new ResourceNotFoundException($"No cart for  with {email} was found");}
+            var paymentCard = _dbContext.PaymentCards.FirstOrDefault(p => p.Id == order.PaymentCardId)
+                ??throw new ResourceNotFoundException($"Payment card with Id {order.PaymentCardId} not found");
             
-            var cartItems = _dbContext.ShoppingCartItems.Where(ci => ci.ShoppingCartId == cart.Id);
-            if(cartItems == null){throw new ResourceNotFoundException($"Cart is empty");}
+            var cart = _dbContext.ShoppingCarts.FirstOrDefault(c => c.User.Email == email)
+                ??throw new ResourceNotFoundException($"No cart for  with {email} was found");
+            
+            var cartItems = _dbContext.ShoppingCartItems.Where(ci => ci.ShoppingCartId == cart.Id).ToList();
+            if(cartItems.Count == 0){throw new ResourceNotFoundException($"Cart is empty");}
 
             var newOrder = CreateOrder(user, address, paymentCard);
             PopulateItemsToOrder(newOrder, cartItems);
-            
-            return _mapper.Map<OrderDto>(newOrder);
+            var orderDto = _mapper.Map<OrderDto>(newOrder);
+            orderDto.CreditCard = paymentCard.CardNumber;
+            return orderDto;
         }
 
         private Order CreateOrder(User user, Address address, PaymentCard paymentCard)
@@ -79,7 +80,9 @@ namespace Cryptocop.Software.API.Repositories.Implementations
                 HouseNumber = address.HouseNumber,
                 ZipCode = address.ZipCode,
                 CardHolderName = paymentCard.CardholderName,
-                MaskedCreditCard = PaymentCardHelper.MaskPaymentCard(paymentCard.CardNumber)
+                MaskedCreditCard = PaymentCardHelper.MaskPaymentCard(paymentCard.CardNumber),
+                OrderDate = DateTime.Now
+                
             };
             _dbContext.Add(newOrder);
             _dbContext.SaveChanges();

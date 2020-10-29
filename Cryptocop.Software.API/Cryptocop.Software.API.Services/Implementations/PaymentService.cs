@@ -15,9 +15,9 @@ namespace Cryptocop.Software.API.Services.Implementations
             _paymentRepository = paymentRepository;
         }
 
-        public void AddPaymentCard(string email, PaymentCardInputModel paymentCard)
+        public PaymentCardDto AddPaymentCard(string email, PaymentCardInputModel paymentCard)
         {
-            _paymentRepository.AddPaymentCard(email, paymentCard);
+            return _paymentRepository.AddPaymentCard(email, paymentCard);
         }
 
         public IEnumerable<PaymentCardDto> GetStoredPaymentCards(string email)

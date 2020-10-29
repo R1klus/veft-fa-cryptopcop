@@ -1,0 +1,6 @@
+{
+    "host": "localhost",
+    "virtualhost": "/",
+    "user": "admin",
+    "password": "superSecret"
+}

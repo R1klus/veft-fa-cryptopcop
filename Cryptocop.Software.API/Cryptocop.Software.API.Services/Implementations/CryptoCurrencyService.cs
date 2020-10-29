@@ -17,7 +17,11 @@ namespace Cryptocop.Software.API.Services.Implementations
     public class CryptoCurrencyService : ICryptoCurrencyService
     {
         private readonly IMapper _mapper;
-        private static readonly HttpClient Client = new HttpClient();
+        
+        private const string Uri = "https://data.messari.io/api/v2/assets?fields="
+                                   + "id," + "symbol," + "name," + "slug," + 
+                                   "metrics/market_data/price_usd," + 
+                                   "profile/general/overview/project_details";
 
         public CryptoCurrencyService(IMapper mapper)
         {
@@ -26,27 +30,13 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public async Task<IEnumerable<CryptoCurrencyDto>> GetAvailableCryptocurrencies()
         {
-            var allowedCurrencies = new List<string>()
-            {
-                "bitcoin",
-                "ethereum",
-                "tether",
-                "monero"
-            };
-            var response = await Client.GetAsync("https://data.messari.io/api/v2/assets?fields=" +
-                                                 "id," +
-                                                 "symbol," +
-                                                 "name," +
-                                                 "slug," +
-                                                 "metrics/market_data/price_usd," +
-                                                 "profile/general/overview/project_details");
+            var response = await CryptocurrencyHelper.Client.GetAsync(Uri);
             var data = await response.DeserializeJsonToList<CryptoCurrencyResponse>(true);
             var dataDto = data
                 .Select(c => _mapper
                     .Map<CryptoCurrencyDto>(c))
-                .Where(c => allowedCurrencies.Contains(c.Slug));
-     
-            
+                .Where(c => CryptocurrencyHelper.AllowedCurrencies.Contains(c.Slug));
+
             return dataDto;
         }
     }

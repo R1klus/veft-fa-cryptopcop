@@ -37,8 +37,8 @@ namespace Cryptocop.Software.API.Controllers
             }
 
             var email = ClaimsHelper.GetClaim(User, "name");
-            _shoppingCartService.AddCartItem(email, cartItem);
-            return CreatedAtRoute("AddItemToCart", null);
+            var newCartItem = _shoppingCartService.AddCartItem(email, cartItem);
+            return CreatedAtRoute("AddItemToCart", new { id = newCartItem.Id}, null);
         }
         
         [HttpPatch]

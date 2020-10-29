@@ -40,9 +40,8 @@ namespace Cryptocop.Software.API.Controllers
                 ErrorHandler.GetModelErrors(ModelState);
             }
             var email = ClaimsHelper.GetClaim(User, "name");
-            _addressService.AddAddress(email, address);
-
-            return CreatedAtRoute("AddAddress", null);
+            var newAddress = _addressService.AddAddress(email, address);
+            return CreatedAtRoute("AddAddress", new { id = newAddress.Id}, null);
         }
 
         [HttpDelete]
