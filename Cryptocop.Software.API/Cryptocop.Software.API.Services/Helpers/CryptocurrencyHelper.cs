@@ -11,7 +11,11 @@ namespace Cryptocop.Software.API.Services.Helpers
             "bitcoin",
             "ethereum",
             "tether",
-            "monero"
+            "monero",
+            "btc",
+            "eth",
+            "usdt",
+            "xmr"
         };
     }
 }

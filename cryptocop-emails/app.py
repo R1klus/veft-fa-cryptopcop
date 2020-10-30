@@ -19,12 +19,22 @@ def connect_to_mesage_broker():
     while not error:
         try:
             connection = get_connection_string()
-            credentials = pika.PlainCredentials(connection['user'], connection['password'])
+            user = connection["user"]
+            password = connection["password"]
+            host = connection["host"]
+            virtual_host = connection["virtualhost"]
+            print(f"Host: {host}")
+            print(f"User: {user}")
+            print(f"Password: {password}")
+            print(f"VirtualHost: {virtual_host}")
+
+            credentials = pika.PlainCredentials(user, password)
             connection = pika.BlockingConnection(
-                pika.ConnectionParameters(connection['host'], 5672, connection['virtualhost'], credentials))
+                pika.ConnectionParameters(host, 5672, virtual_host, credentials))
             channel = connection.channel()
             return channel
         except:
+            print("Connection failed retry in 5 seconds")
             sleep(5)
             continue
 
@@ -77,6 +87,8 @@ def order_create_event(ch, method, properties, data):
 
     representation = order_template.format(name, address, city, zip_code, country, date, total_price)
     send_simple_message(email, "Your order has been placed", representation)
+    with open("log.txt", "a") as f:
+        f.write(f"Email Log: Name: {name} Date: {date} Email: {email}\n")
     print(f"Confirmation Email sent to: {email}")
 
 
@@ -94,5 +106,5 @@ def start_listening():
     new_channel.start_consuming()
 
 
-if __name__ == '__main__':
-    start_listening()
+print("Email Service Started")
+start_listening()

@@ -41,14 +41,19 @@ def setup_channel(exchange_name, queue_name, routing_key, channel):
 def validate_creditcard_number(card_number: str):
     if luhn.is_valid(card_number):
         print(f"Credit Card Number: {card_number} is Valid")
+        with open("log.txt", "a") as f:
+            f.write(f"Payment Log: Credit card number: {card_number} is Valid\n")
     else:
         print(f"Credit Card Number: {card_number} is Invalid")
+        with open("log.txt", "a") as f:
+            f.write(f"Payment Log: Credit card number: {card_number} is Valid\n")
 
 
 def order_create_event(ch, method, properties, data):
     parsed_data = json.loads(data)
     card_number = parsed_data["CreditCard"]
     validate_creditcard_number(card_number)
+
 
 def start_listening():
     new_channel = connect_to_mesage_broker()

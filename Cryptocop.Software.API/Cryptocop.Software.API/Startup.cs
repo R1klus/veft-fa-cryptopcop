@@ -39,6 +39,7 @@ namespace Cryptocop.Software.API
                 options.SuppressModelStateInvalidFilter = true;
             });
             
+            
             // Databases
             services.AddDbContext<CryptocopDbContext>(options =>
             {

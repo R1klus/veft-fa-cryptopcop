@@ -1,0 +1,14 @@
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.deps.json
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.pdb
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Models.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Repositories.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Models.pdb
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\bin\0.1\netcoreapp3.1\Cryptocop.Software.API.Repositories.pdb
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.csprojAssemblyReference.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.AssemblyInfoInputs.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.AssemblyInfo.cs
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.csproj.CoreCompileInputs.cache
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.csproj.CopyComplete
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.dll
+C:\Users\rikha\Documents\RU\RU-Projects\VEFT-FA-Cryptocop\Cryptocop.Software.API\Cryptocop.Software.API.Services\obj\0.1\netcoreapp3.1\Cryptocop.Software.API.Services.pdb

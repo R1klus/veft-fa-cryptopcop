@@ -6,9 +6,33 @@ services:
         ports:
             - "5000:5000"
         networks:
-            - "crypto-network"     
-   
-
+            - "crypto-network" 
+    
+    crypto-email-service:
+        build: ./cryptocop-emails
+        container_name: crypto-email-service
+        networks:
+            - "crypto-network"
+    
+    crypto-payment-service:
+        build: ./cryptocop-payments
+        container_name: crypto-payment-service
+        networks:
+            - "crypto-network"
+            
+    crypto-message-broker:
+        image: rabbitmq:3-management
+        container_name: crypto-message-broker
+        hostname: message-broker
+        ports:
+            - "15672:15672"
+            - "5672:5672"
+        environment:
+            - RABBITMQ_DEFAULT_USER=admin
+            - RABBITMQ_DEFAULT_PASS=superSecret
+            - RABBITMQ_DEFAULT_VHOST=/  
+        networks:
+            - "crypto-network"
 networks:
   crypto-network:
     driver: bridge        

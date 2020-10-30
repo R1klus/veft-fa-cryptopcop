@@ -1,5 +1,5 @@
 {
-    "host": "localhost",
+    "host": "crypto-message-broker",
     "virtualhost": "/",
     "user": "admin",
     "password": "superSecret"

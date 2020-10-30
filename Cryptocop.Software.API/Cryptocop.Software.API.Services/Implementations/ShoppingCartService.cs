@@ -28,15 +28,8 @@ namespace Cryptocop.Software.API.Services.Implementations
 
         public ShoppingCartItemDto AddCartItem(string email, ShoppingCartItemInputModel shoppingCartItemItem)
         {
-            var allowedCurrencies = new List<string>()
-            {
-                "bitcoin",
-                "ethereum",
-                "tether",
-                "monero"
-            };
             var productIdentifier = shoppingCartItemItem.ProductIdentifier;
-            if (!allowedCurrencies.Contains(productIdentifier.ToLower()))
+            if (!CryptocurrencyHelper.AllowedCurrencies.Contains(productIdentifier.ToLower()))
             {
                 throw new InvalidProductIdentifierException();
             }
