@@ -26,6 +26,10 @@ namespace Cryptocop.Software.API.Repositories.Implementations
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
             if (user == null){ throw new ResourceNotFoundException($"User with email {email} not found");}
 
+            var cardEntity = _dbContext.PaymentCards.FirstOrDefault(p => p.CardholderName == user.FullName
+                                                                         && p.CardNumber == paymentCard.CardNumber);
+            if(cardEntity != null) { throw new ResourceAlreadyExistsException($"Payment Card already registered to {email}");}
+
             var paymentEntity = _mapper.Map<PaymentCard>(paymentCard);
             paymentEntity.UserId = user.Id;
             _dbContext.PaymentCards.Add(paymentEntity);
