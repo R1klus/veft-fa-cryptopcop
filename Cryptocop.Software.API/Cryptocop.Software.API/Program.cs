@@ -17,10 +17,6 @@ namespace Cryptocop.Software.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseKestrel(opts =>
-                    {
-                        opts.ListenAnyIP(5000);
-                    });
                 });
     }
 }

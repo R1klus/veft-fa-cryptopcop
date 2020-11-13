@@ -48,6 +48,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
             cartItem.ShoppingCartId = cart.Id;
             cartItem.UnitPrice = priceInUsd;
+            cartItem.TotalPrice = priceInUsd * cartItem.Quantity;
             _dbContext.Add(cartItem);
             _dbContext.SaveChanges();
             return _mapper.Map<ShoppingCartItemDto>(cartItem);

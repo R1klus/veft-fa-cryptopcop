@@ -40,6 +40,8 @@
         <e p="Migrations" t="Include">
           <e p="20201028140228_initialMigration.cs" t="Include" />
           <e p="20201028140228_initialMigration.Designer.cs" t="Include" />
+          <e p="20201030153145_totalPrice.cs" t="Include" />
+          <e p="20201030153145_totalPrice.Designer.cs" t="Include" />
           <e p="CryptocopDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -60,7 +62,7 @@
         <e p="Cryptocop.Software.API.Models.csproj" t="IncludeRecursive" />
         <e p="DTOs" t="Include">
           <e p="AddressDto.cs" t="Include" />
-          <e p="CryptocurrencyDto.cs" t="Include" />
+          <e p="CryptoCurrencyDto.cs" t="Include" />
           <e p="ExchangeDto.cs" t="Include" />
           <e p="OrderDto.cs" t="Include" />
           <e p="OrderItemDto.cs" t="Include" />
@@ -87,6 +89,7 @@
           <e p="PaymentCardInputModel.cs" t="Include" />
           <e p="RegisterInputModel.cs" t="Include" />
           <e p="ShoppingCartItemInputModel.cs" t="Include" />
+          <e p="UpdateQuantityInputModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -103,7 +106,7 @@
       <e p="Cryptocop.Software.API.Repositories" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contexts" t="Include">
-          <e p="CryptoCopDbContext.cs" t="Include" />
+          <e p="CryptocopDbContext.cs" t="Include" />
         </e>
         <e p="Cryptocop.Software.API.Repositories.csproj" t="IncludeRecursive" />
         <e p="Exceptions" t="Include">
@@ -137,6 +140,9 @@
               <e p="Cryptocop.Software.API.Repositories.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Resolvers" t="Include">
+          <e p="UnMaskCardNumberResolver.cs" t="Include" />
         </e>
       </e>
       <e p="Cryptocop.Software.API.Services" t="IncludeRecursive">

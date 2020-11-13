@@ -27,13 +27,15 @@ namespace Cryptocop.Software.API.Repositories.Implementations
 
         public IEnumerable<OrderDto> GetOrders(string email)
         {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
+            var user = _dbContext.Users
+                .Include(u => u.PaymentCards)
+                .FirstOrDefault(u => u.Email == email);
             if(user == null){throw new ResourceNotFoundException($"User with email {email} not found");}
 
             var orders = _dbContext.Orders
-                .Where(o => o.User == user)
-                .Select(o => _mapper
-                    .Map<OrderDto>(o)).ToList();
+                .Where(o => o.User == user).ToList()
+                .Select(o => _mapper.Map<OrderDto>(o)).ToList();
+
             foreach (var order in orders)
             {
                 order.OrderItems = _dbContext.OrderItems

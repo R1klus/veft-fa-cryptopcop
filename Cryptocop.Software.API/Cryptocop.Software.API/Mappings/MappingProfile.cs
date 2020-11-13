@@ -1,10 +1,13 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using AutoMapper;
 using Cryptocop.Software.API.Models.DTOs;
 using Cryptocop.Software.API.Models.Entities;
 using Cryptocop.Software.API.Models.InputModels;
 using Cryptocop.Software.API.Models.ResponseModels;
 using Cryptocop.Software.API.Repositories.Helpers;
+using Cryptocop.Software.API.Repositories.Resolvers;
+using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Cryptocop.Software.API.Mappings
@@ -25,7 +28,13 @@ namespace Cryptocop.Software.API.Mappings
                 .ForMember(src => src.TotalPrice, 
                     opt => opt.
                         MapFrom(src => src.Quantity*src.UnitPrice));
-            CreateMap<Order, OrderDto>();
+            CreateMap<Order, OrderDto>()
+                .ForMember(src => src.OrderDate,
+                    opt => opt
+                        .MapFrom(src => src.OrderDate.ToString("d")))
+                .ForMember(src => src.CreditCard,
+                    opt => opt.MapFrom(src => src.MaskedCreditCard));
+                
             CreateMap<OrderItem, OrderItemDto>();
             CreateMap<PaymentCard, PaymentCardDto>();
             CreateMap<User, UserDto>();

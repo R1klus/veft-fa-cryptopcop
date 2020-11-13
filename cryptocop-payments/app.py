@@ -10,7 +10,7 @@ CREATE_ORDER_ROUTING_KEY = "create-order"
 
 
 def get_connection_string() -> dict:
-    with open('./config/mb.production.json', 'r') as f:
+    with open(f'./config/mb.{environ.get("PYTHON_ENV")}.json', 'r') as f:
         return json.load(f)
 
 
@@ -40,13 +40,13 @@ def setup_channel(exchange_name, queue_name, routing_key, channel):
 
 def validate_creditcard_number(card_number: str):
     if luhn.is_valid(card_number):
-        print(f"Credit Card Number: {card_number} is Valid")
-        with open("log.txt", "a") as f:
-            f.write(f"Payment Log: Credit card number: {card_number} is Valid\n")
+        message = f"Credit Card Number: {card_number} is Valid."
     else:
-        print(f"Credit Card Number: {card_number} is Invalid")
-        with open("log.txt", "a") as f:
-            f.write(f"Payment Log: Credit card number: {card_number} is Valid\n")
+        message = f"Credit Card Number: {card_number} is Invalid."
+
+    print(message)
+    with open("log.txt", "a") as f:
+        f.write(message)
 
 
 def order_create_event(ch, method, properties, data):

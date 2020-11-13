@@ -43,8 +43,12 @@ namespace Cryptocop.Software.API.Controllers
         
         [HttpPatch]
         [Route("{itemId}", Name = "UpdateQuantity")]
-        public IActionResult UpdateQuantity([FromBody] ShoppingCartItemInputModel cartItem, int itemId)
+        public IActionResult UpdateQuantity([FromBody] UpdateQuantityInputModel cartItem, int itemId)
         {
+            if (!ModelState.IsValid)
+            {
+                ErrorHandler.GetModelErrors(ModelState);
+            }
             var email = ClaimsHelper.GetClaim(User, "name");
             _shoppingCartService.UpdateCartItemQuantity(email, itemId, cartItem.Quantity);
             return Ok();

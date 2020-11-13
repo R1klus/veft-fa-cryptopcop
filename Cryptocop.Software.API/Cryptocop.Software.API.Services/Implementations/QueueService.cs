@@ -23,13 +23,10 @@ namespace Cryptocop.Software.API.Services.Implementations
             {
                 var messageBrokerSection = configuration.GetSection("MessageBroker");
                 _exchangeName = messageBrokerSection.GetSection("ExchangeName").Value;
-                var host = messageBrokerSection.GetSection("Host").Value;
 
-                var factory = new ConnectionFactory
+                var factory = new ConnectionFactory()
                 {
-                    Uri = new Uri(messageBrokerSection.GetSection("ConnectionString").Value),
-                    HostName = host,
-                    Port = 5672
+                    Uri = new Uri(messageBrokerSection.GetSection("ConnectionString").Value)
                 };
                 _connection = factory.CreateConnection();
                 _channel = _connection.CreateModel();

@@ -10,7 +10,7 @@ CREATE_ORDER_ROUTING_KEY = "create-order"
 
 
 def get_connection_string() -> dict:
-    with open('./config/mb.production.json', 'r') as f:
+    with open(f'./config/mb.{environ.get("PYTHON_ENV")}.json', 'r') as f:
         return json.load(f)
 
 
@@ -19,18 +19,9 @@ def connect_to_mesage_broker():
     while not error:
         try:
             connection = get_connection_string()
-            user = connection["user"]
-            password = connection["password"]
-            host = connection["host"]
-            virtual_host = connection["virtualhost"]
-            print(f"Host: {host}")
-            print(f"User: {user}")
-            print(f"Password: {password}")
-            print(f"VirtualHost: {virtual_host}")
-
-            credentials = pika.PlainCredentials(user, password)
+            credentials = pika.PlainCredentials(connection['user'], connection['password'])
             connection = pika.BlockingConnection(
-                pika.ConnectionParameters(host, 5672, virtual_host, credentials))
+                pika.ConnectionParameters(connection['host'], 5672, connection['virtualhost'], credentials))
             channel = connection.channel()
             return channel
         except:
@@ -48,10 +39,6 @@ def setup_channel(exchange_name, queue_name, routing_key, channel):
     channel.queue_bind(exchange=exchange_name, queue=queue_name, routing_key=routing_key)
 
 
-def write_payload(payload):
-    print("Email Queue: " + str(payload))
-
-
 def send_simple_message(to, subject, body):
     return requests.post(
         "https://api.mailgun.net/v3/sandbox549155f073d54c3da1e0919a30b85a58.mailgun.org/messages",
@@ -67,7 +54,7 @@ def order_create_event(ch, method, properties, data):
     email = parsed_data["Email"]
 
     name = parsed_data["FullName"]
-    address = parsed_data["StreetName"] + parsed_data["HouseNumber"]
+    address = parsed_data["StreetName"] + " " + parsed_data["HouseNumber"]
     city = parsed_data["City"]
     zip_code = parsed_data["ZipCode"]
     country = parsed_data["Country"]
@@ -87,9 +74,10 @@ def order_create_event(ch, method, properties, data):
 
     representation = order_template.format(name, address, city, zip_code, country, date, total_price)
     send_simple_message(email, "Your order has been placed", representation)
+    message = f"Email Log: Name: {name} Date: {date} Email: {email}\n"
     with open("log.txt", "a") as f:
-        f.write(f"Email Log: Name: {name} Date: {date} Email: {email}\n")
-    print(f"Confirmation Email sent to: {email}")
+        f.write(message)
+    print(message)
 
 
 def start_listening():

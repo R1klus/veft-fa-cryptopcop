@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using AutoMapper;
 using Cryptocop.Software.API.Models.DTOs;
@@ -17,6 +18,7 @@ namespace Cryptocop.Software.API.Repositories.Implementations
         private readonly CryptocopDbContext _dbContext;
         private readonly IMapper _mapper;
         private readonly ITokenRepository _tokenRepository;
+        
 
         public UserRepository(CryptocopDbContext dbContext, IMapper mapper, ITokenRepository tokenRepository)
         {
